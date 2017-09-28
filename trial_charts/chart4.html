@@ -1,0 +1,582 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<style media="screen">
+  #chart4 {
+    min-width: 310px;
+    width: 100%;
+    /*height must be a minimum of 860px*/
+    min-height: 860px;
+    height: 1000px;
+    margin: 0 auto;
+  }
+
+  .highcharts-background {
+    fill: transparent;
+  }
+  /*body{
+    background: url("https://images.unsplash.com/photo-1463780324318-d1a8ddc05a11") no-repeat center center fixed;
+  }*/
+
+  .highcharts-title {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  .highcharts-legend {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  .highcharts-axis-labels {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  .highcharts-xaxis-labels {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  @media (max-width: 700px) {
+    #chart4 {
+      height: 1000px;
+    }
+    .highcharts-color-0 {
+      fill: #bad80a !important;
+    }
+    body {
+      /*background: url("https://images.unsplash.com/photo-1463780324318-d1a8ddc05a11");*/
+    }
+  }
+</style>
+
+<select id="stateSelect">
+  <option value="">Select State</option>
+  <option value="AL">Alabama</option>
+  <option value="AK">Alaska</option>
+  <option value="AZ">Arizona</option>
+  <option value="AR">Arkansas</option>
+  <option value="CA">California</option>
+  <option value="CO">Colorado</option>
+  <option value="CT">Connecticut</option>
+  <option value="DE">Delaware</option>
+  <option value="DC">District of Columbia</option>
+  <option value="FL">Florida</option>
+  <option value="GA">Georgia</option>
+  <option value="HI">Hawaii</option>
+  <option value="ID">Idaho</option>
+  <option value="IL">Illinois</option>
+  <option value="IN">Indiana</option>
+  <option value="IA">Iowa</option>
+  <option value="KS">Kansas</option>
+  <option value="KY">Kentucky</option>
+  <option value="LA">Louisiana</option>
+  <option value="ME">Maine</option>
+  <option value="MD">Maryland</option>
+  <option value="MA">Massachusetts</option>
+  <option value="MI">Michigan</option>
+  <option value="MN">Minnesota</option>
+  <option value="MS">Mississippi</option>
+  <option value="MO">Missouri</option>
+  <option value="MT">Montana</option>
+  <option value="NE">Nebraska</option>
+  <option value="NV">Nevada</option>
+  <option value="NH">New Hampshire</option>
+  <option value="NJ">New Jersey</option>
+  <option value="NM">New Mexico</option>
+  <option value="NY">New York</option>
+  <option value="NC">North Carolina</option>
+  <option value="ND">North Dakota</option>
+  <option value="OH">Ohio</option>
+  <option value="OK">Oklahoma</option>
+  <option value="OR">Oregon</option>
+  <option value="PA">Pennsylvania</option>
+  <option value="RI">Rhode Island</option>
+  <option value="SC">South Carolina</option>
+  <option value="SD">South Dakota</option>
+  <option value="TN">Tennessee</option>
+  <option value="TX">Texas</option>
+  <option value="UT">Utah</option>
+  <option value="VT">Vermont</option>
+  <option value="VA">Virginia</option>
+  <option value="WA">Washington</option>
+  <option value="WV">West Virginia</option>
+  <option value="WI">Wisconsin</option>
+  <option value="WY">Wyoming</option>
+</select>
+
+
+<!-- 860px min height before font gets messed up -->
+<div id="chart4"></div>
+
+<script>
+  // if (window.innerWidth < 501) {
+  //   $(".highcharts-color-0").css("fill", "#FCA311");
+  //   console.log("true");
+  // } else {
+  //   $(".highcharts-color-0").css("fill", "#3a75c4");
+  // }
+
+  var chart1 = function() {
+    Highcharts.chart("chart4", {
+      chart: {
+        type: "bar"
+      },
+      title: {
+        text: "State Ranking by Incidence Rate"
+      },
+      xAxis: {
+        categories: [
+          "Kentucky",
+          "West Virginia",
+          "Arkansas",
+          "Missouri",
+          "Tennessee",
+          "Maine",
+          "Mississippi",
+          "Louisiana",
+          "Rhode Island",
+          "Indiana",
+          "Alabama",
+          "Oklahoma",
+          "Delaware",
+          "North Carolina",
+          "South Carolina",
+          "Ohio",
+          "Georgia",
+          "Illinois",
+          "Michigan",
+          "Massachusetts",
+          "New Hampshire",
+          "Pennsylvania",
+          "Vermont",
+          "Iowa",
+          "District of Columbia",
+          "Florida",
+          "Connecticut",
+          "Virginia",
+          "New York",
+          "Nebraska",
+          "Kansas",
+          "Wisconsin",
+          "Washington",
+          "Nevada",
+          "Alaska",
+          "New Jersey",
+          "Maryland",
+          "Oregon",
+          "Texas",
+          "North Dakota",
+          "Minnesota",
+          "South Dakota",
+          "Montana",
+          "Idaho",
+          "Arizona",
+          "Wyoming",
+          "Colorado",
+          "Hawaii",
+          "California",
+          "New Mexico",
+          "Utah"
+        ]
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: "Incidence"
+        }
+      },
+      legend: {
+        reversed: true
+      },
+      plotOptions: {
+        series: {
+          stacking: "normal"
+        }
+      },
+      series: [{
+        name: "States",
+        data: [
+          92.4,
+          77.1,
+          75.1,
+          75.1,
+          74.9,
+          74.6,
+          74.5,
+          70.1,
+          69.9,
+          69.8,
+          69.6,
+          69.3,
+          67.9,
+          67.7,
+          67.0,
+          66.8,
+          66.7,
+          65.8,
+          65.1,
+          64.8,
+          64.0,
+          63.9,
+          62.4,
+          61.7,
+          61.2,
+          61.2,
+          61.0,
+          60.6,
+          60.3,
+          59.1,
+          59.0,
+          58.9,
+          58.7,
+          58.3,
+          57.2,
+          56.3,
+          56.1,
+          55.9,
+          55.4,
+          55.1,
+          54.7,
+          54.6,
+          53.2,
+          51.0,
+          49.4,
+          48.0,
+          44.9,
+          44.9,
+          44.2,
+          40.6,
+          29.9
+        ]
+      }],
+      dataLabels: {
+        style: {
+          fontFamily: "'Lato', sans-serif"
+        }
+      }
+    });
+    // hide credits
+    // $(".highcharts-credits").html("");
+    $(".highcharts-color-0").css("fill", "#3a75c4");
+    $(".highcharts-legend-item rect").css("fill", "#3a75c4");
+
+    var state = Cookies.get('state');
+    // bar on graph changes to green based on state selection
+    if (state == "KY") {
+      $(".highcharts-series-group rect:nth-child(1)").css("fill", "#7fba00");
+    }
+    if (state == "WV") {
+      $(".highcharts-series-group rect:nth-child(2)").css("fill", "#7fba00");
+    }
+    if (state == "AR") {
+      $(".highcharts-series-group rect:nth-child(3)").css("fill", "#7fba00");
+    }
+    if (state == "MO") {
+      $(".highcharts-series-group rect:nth-child(4)").css("fill", "#7fba00");
+    }
+    if (state == "TN") {
+      $(".highcharts-series-group rect:nth-child(5)").css("fill", "#7fba00");
+    }
+    if (state == "ME") {
+      $(".highcharts-series-group rect:nth-child(6)").css("fill", "#7fba00");
+    }
+    if (state == "MS") {
+      $(".highcharts-series-group rect:nth-child(7)").css("fill", "#7fba00");
+    }
+    if (state == "LA") {
+      $(".highcharts-series-group rect:nth-child(8)").css("fill", "#7fba00");
+    }
+    if (state == "RI") {
+      $(".highcharts-series-group rect:nth-child(9)").css("fill", "#7fba00");
+    }
+    if (state == "IN") {
+      $(".highcharts-series-group rect:nth-child(10)").css("fill", "#7fba00");
+    }
+    if (state == "AL") {
+      $(".highcharts-series-group rect:nth-child(11)").css("fill", "#7fba00");
+    }
+    if (state == "OK") {
+      $(".highcharts-series-group rect:nth-child(12)").css("fill", "#7fba00");
+    }
+    if (state == "DE") {
+      $(".highcharts-series-group rect:nth-child(13)").css("fill", "#7fba00");
+    }
+    if (state == "NC") {
+      $(".highcharts-series-group rect:nth-child(14)").css("fill", "#7fba00");
+    }
+    if (state == "SC") {
+      $(".highcharts-series-group rect:nth-child(15)").css("fill", "#7fba00");
+    }
+    if (state == "OH") {
+      $(".highcharts-series-group rect:nth-child(16)").css("fill", "#7fba00");
+    }
+    if (state == "GA") {
+      $(".highcharts-series-group rect:nth-child(17)").css("fill", "#7fba00");
+    }
+    if (state == "IL") {
+      $(".highcharts-series-group rect:nth-child(18)").css("fill", "#7fba00");
+    }
+    if (state == "MI") {
+      $(".highcharts-series-group rect:nth-child(19)").css("fill", "#7fba00");
+    }
+    if (state == "MA") {
+      $(".highcharts-series-group rect:nth-child(20)").css("fill", "#7fba00");
+    }
+    if (state == "NH") {
+      $(".highcharts-series-group rect:nth-child(21)").css("fill", "#7fba00");
+    }
+    if (state == "PA") {
+      $(".highcharts-series-group rect:nth-child(22)").css("fill", "#7fba00");
+    }
+    if (state == "VT") {
+      $(".highcharts-series-group rect:nth-child(23)").css("fill", "#7fba00");
+    }
+    if (state == "IA") {
+      $(".highcharts-series-group rect:nth-child(24)").css("fill", "#7fba00");
+    }
+    if (state == "DC") {
+      $(".highcharts-series-group rect:nth-child(25)").css("fill", "#7fba00");
+    }
+    if (state == "FL") {
+      $(".highcharts-series-group rect:nth-child(26)").css("fill", "#7fba00");
+    }
+    if (state == "CT") {
+      $(".highcharts-series-group rect:nth-child(27)").css("fill", "#7fba00");
+    }
+    if (state == "VA") {
+      $(".highcharts-series-group rect:nth-child(28)").css("fill", "#7fba00");
+    }
+    if (state == "NY") {
+      $(".highcharts-series-group rect:nth-child(29)").css("fill", "#7fba00");
+    }
+    if (state == "NE") {
+      $(".highcharts-series-group rect:nth-child(30)").css("fill", "#7fba00");
+    }
+    if (state == "KS") {
+      $(".highcharts-series-group rect:nth-child(31)").css("fill", "#7fba00");
+    }
+    if (state == "WI") {
+      $(".highcharts-series-group rect:nth-child(32)").css("fill", "#7fba00");
+    }
+    if (state == "WA") {
+      $(".highcharts-series-group rect:nth-child(33)").css("fill", "#7fba00");
+    }
+    if (state == "NV") {
+      $(".highcharts-series-group rect:nth-child(34)").css("fill", "#7fba00");
+    }
+    if (state == "AK") {
+      $(".highcharts-series-group rect:nth-child(35)").css("fill", "#7fba00");
+    }
+    if (state == "NJ") {
+      $(".highcharts-series-group rect:nth-child(36)").css("fill", "#7fba00");
+    }
+    if (state == "MD") {
+      $(".highcharts-series-group rect:nth-child(37)").css("fill", "#7fba00");
+    }
+    if (state == "OR") {
+      $(".highcharts-series-group rect:nth-child(38)").css("fill", "#7fba00");
+    }
+    if (state == "TX") {
+      $(".highcharts-series-group rect:nth-child(39)").css("fill", "#7fba00");
+    }
+    if (state == "ND") {
+      $(".highcharts-series-group rect:nth-child(40)").css("fill", "#7fba00");
+    }
+    if (state == "MN") {
+      $(".highcharts-series-group rect:nth-child(41)").css("fill", "#7fba00");
+    }
+    if (state == "SD") {
+      $(".highcharts-series-group rect:nth-child(42)").css("fill", "#7fba00");
+    }
+    if (state == "MT") {
+      $(".highcharts-series-group rect:nth-child(43)").css("fill", "#7fba00");
+    }
+    if (state == "ID") {
+      $(".highcharts-series-group rect:nth-child(44)").css("fill", "#7fba00");
+    }
+    if (state == "AZ") {
+      $(".highcharts-series-group rect:nth-child(45)").css("fill", "#7fba00");
+    }
+    if (state == "WY") {
+      $(".highcharts-series-group rect:nth-child(46)").css("fill", "#7fba00");
+    }
+    if (state == "CO") {
+      $(".highcharts-series-group rect:nth-child(47)").css("fill", "#7fba00");
+    }
+    if (state == "HI") {
+      $(".highcharts-series-group rect:nth-child(48)").css("fill", "#7fba00");
+    }
+    if (state == "CA") {
+      $(".highcharts-series-group rect:nth-child(49)").css("fill", "#7fba00");
+    }
+    if (state == "NM") {
+      $(".highcharts-series-group rect:nth-child(50)").css("fill", "#7fba00");
+    }
+    if (state == "UT") {
+      $(".highcharts-series-group rect:nth-child(51)").css("fill", "#7fba00");
+    }
+  };
+
+ $(document).ready(function(){
+   chart1();
+ })
+  // var state = function(){
+  // }
+</script>
+<script>
+$("#stateSelect").on("change", function(){
+  if ($(this).val() == "AL"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=AL"
+  }
+  else if($(this).val() == "AK"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=AK"
+  }
+  else if($(this).val() == "AZ"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=AZ"
+  }
+  else if($(this).val() == "AR"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=AR"
+  }
+  else if($(this).val() == "CA"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=CA"
+  }
+  else if($(this).val() == "CO"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=CO"
+  }
+  else if($(this).val() == "CT"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=CT"
+  }
+  else if($(this).val() == "DE"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=DE"
+  }
+  else if($(this).val() == "DC"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=DC"
+  }
+  else if($(this).val() == "FL"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=FL"
+  }
+  else if($(this).val() == "GA"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=GA"
+  }
+  else if($(this).val() == "HI"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=HI"
+  }
+  else if($(this).val() == "ID"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=ID"
+  }
+  else if($(this).val() == "IL"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=IL"
+  }
+  else if($(this).val() == "IN"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=IN"
+  }
+  else if($(this).val() == "IA"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=IA"
+  }
+  else if($(this).val() == "KS"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=KS"
+  }
+  else if($(this).val() == "KY"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=KY"
+  }
+  else if($(this).val() == "LA"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=LA"
+  }
+  else if($(this).val() == "ME"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=ME"
+  }
+  else if($(this).val() == "MD"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=MD"
+  }
+  else if($(this).val() == "MA"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=MA"
+  }
+  else if($(this).val() == "MI"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=MI"
+  }
+  else if($(this).val() == "MN"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=MN"
+  }
+  else if($(this).val() == "MS"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=MS"
+  }
+  else if($(this).val() == "MO"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=MO"
+  }
+  else if($(this).val() == "MT"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=MT"
+  }
+  else if($(this).val() == "NE"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=NE"
+  }
+  else if($(this).val() == "NV"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=NV"
+  }
+  else if($(this).val() == "NH"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=NH"
+  }
+  else if($(this).val() == "NJ"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=NJ"
+  }
+  else if($(this).val() == "NM"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=NM"
+  }
+  else if($(this).val() == "NY"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=NY"
+  }
+  else if($(this).val() == "NC"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=NC"
+  }
+  else if($(this).val() == "ND"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=ND"
+  }
+  else if($(this).val() == "OH"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=OH"
+  }
+  else if($(this).val() == "OK"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=OK"
+  }
+  else if($(this).val() == "OR"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=OR"
+  }
+  else if($(this).val() == "PA"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=PA"
+  }
+  else if($(this).val() == "RI"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=RI"
+  }
+  else if($(this).val() == "SC"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=SC"
+  }
+  else if($(this).val() == "SD"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=SD"
+  }
+  else if($(this).val() == "TN"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=TN"
+  }
+  else if($(this).val() == "TX"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=TX"
+  }
+  else if($(this).val() == "UT"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=UT"
+  }
+  else if($(this).val() == "VA"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=VA"
+  }
+  else if($(this).val() == "VT"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=VT"
+  }
+  else if($(this).val() == "WA"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=WA"
+  }
+  else if($(this).val() == "WV"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=WV"
+  }
+  else if($(this).val() == "WI"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=WI"
+  }
+  else if($(this).val() == "WY"){
+    window.location = "http://www.lung.org/dev/charts/chart-4.html?setState=WY"
+  }
+
+})
+
+</script>

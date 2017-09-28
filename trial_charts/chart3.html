@@ -1,0 +1,416 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<style media="screen">
+
+  #chart{
+    min-width: 310px;
+    width: 100%;
+    /*height must be a minimum of 860px*/
+    min-height: 860px;
+    height: 1000px;
+    margin: 0 auto;
+  }
+
+  .highcharts-background {
+    fill: transparent;
+  }
+
+  /*body{
+    background: url("https://images.unsplash.com/photo-1463780324318-d1a8ddc05a11") no-repeat center center fixed;
+  }*/
+
+  .highcharts-title{
+    font-family: 'Lato', sans-serif !important;
+  }
+  .highcharts-legend{
+    font-family: 'Lato', sans-serif !important;
+  }
+  .highcharts-axis-labels{
+    font-family: 'Lato', sans-serif !important;
+  }
+  .highcharts-xaxis-labels{
+    font-family: 'Lato', sans-serif !important;
+  }
+@media (max-width: 700px){
+  #chart{
+    height: 1000px;
+  }
+  .highcharts-color-0 {
+    fill: #bad80a !important;
+  }
+  body{
+    background: url("https://images.unsplash.com/photo-1463780324318-d1a8ddc05a11");
+  }
+}
+
+</style>
+
+<!-- 860px min height before font gets messed up -->
+<div id="chart"></div>
+
+<script>
+if (window.innerWidth < 501){
+  $(".highcharts-color-0").css("fill", "#FCA311");
+  console.log("true");
+} else {
+  $(".highcharts-color-0").css("fill", "#3a75c4");
+
+}
+
+$(function () {
+    Highcharts.chart("chart", {
+        chart: {
+            type: "bar"
+        },
+        title: {
+            text: "State Ranking by Incidence Rate"
+        },
+        xAxis: {
+            categories: [
+              "Utah",
+              "New Mexico",
+              "California",
+              "Colorado",
+              "Hawaii",
+              "Wyoming",
+              "Arizona",
+              "Idaho",
+              "Montana",
+              "South Dakota",
+              "Minnesota",
+              "North Dakota",
+              "Texas",
+              "Oregon",
+              "Maryland",
+              "New Jersey",
+              "Alaska",
+              "Nevada",
+              "Washington",
+              "Wisconsin",
+              "Kansas",
+              "Nebraska",
+              "New York",
+              "Virginia",
+              "Connecticut",
+              "District of Columbia",
+              "Florida",
+              "Iowa",
+              "Vermont",
+              "Pennsylvania",
+              "New Hampshire",
+              "Massachusetts",
+              "Michigan",
+              "Illinois",
+              "Georgia",
+              "Ohio",
+              "South Carolina",
+              "North Carolina",
+              "Delaware",
+              "Oklahoma",
+              "Alabama",
+              "Indiana",
+              "Rhode Island",
+              "Louisiana",
+              "Mississippi",
+              "Maine",
+              "Tennessee",
+              "Arkansas",
+              "Missouri",
+              "West Virginia",
+              "Kentucky"
+          ]
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: "Incidence"
+            }
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: "normal"
+            }
+        },
+        series: [
+          {
+            name: "States",
+            data: [
+              29.9,
+              40.6,
+              44.2,
+              44.9,
+              44.9,
+              48.0,
+              49.4,
+              51.0,
+              53.2,
+              54.6,
+              54.7,
+              55.1,
+              55.4,
+              55.9,
+              56.1,
+              56.3,
+              57.2,
+              58.3,
+              58.7,
+              58.9,
+              59.0,
+              59.1,
+              60.3,
+              60.6,
+              61.0,
+              61.2,
+              61.2,
+              61.7,
+              62.4,
+              63.9,
+              64.0,
+              64.8,
+              65.1,
+              65.8,
+              66.7,
+              66.8,
+              67.0,
+              67.7,
+              67.9,
+              69.3,
+              69.6,
+              69.8,
+              69.9,
+              70.1,
+              74.5,
+              74.6,
+              74.9,
+              75.1,
+              75.1,
+              77.1,
+              92.4
+            ]
+          }
+      ],
+        dataLabels: {
+          style: {
+            fontFamily: "'Lato', sans-serif"
+          }
+        }
+    });
+    // $(".highcharts-credits").html("");
+    $(".highcharts-color-0").css("fill", "#3a75c4");
+    $(".highcharts-legend-item rect").css("fill", "#3a75c4");
+
+
+    var state == Cookies.get('state');
+    // //   if (state == "AL") {
+    // //     var fullStateName = "alabama";
+    // //     $(".state_name").text("Alabama");
+    // //   }
+    // //   if (state == "AK") {
+    // //     var fullStateName = "alaska";
+    // //     $(".state_name").text("Alaska");
+    // //   }
+    // //   if (state == "AR") {
+    // //     var fullStateName = "arkansas";
+    // //     $(".state_name").text("Arkansas");
+    // //   }
+    // //   if (state == "AZ") {
+    // //     var fullStateName = "arizona";
+    // //     $(".state_name").text("Arizona");
+    // //   }
+    // //   if (state == "CA") {
+    // //     var fullStateName = "california";
+    // //     $(".state_name").text("California");
+    // //   }
+    // if (state == "CO") {
+    //  $(".highcharts-series-group rect:nth-child(47)").css("fill", "black");
+    //   console.log("hey");
+    // //     }
+    // //     if (state == "CT") {
+    // //       var fullStateName = "connecticut";
+    // //       $(".state_name").text("Connecticut");
+    // //     }
+    // //   if (state == "DC") {
+    // //     var fullStateName = "washington-dc";
+    // //     $(".state_name").text("Washington DC");
+    // //   }
+    // //     if (state == "DE") {
+    // //       var fullStateName = "delaware";
+    // //     $(".state_name").text("Delaware");
+    // //   }
+    // //   if (state == "FL") {
+    // //     var fullStateName = "florida";
+    // //     $(".state_name").text("Florida");
+    // //   }
+    // //   if (state == "GA") {
+    // //     var fullStateName = "georgia";
+    // //     $(".state_name").text("Georgia");
+    // //   }
+    // //   if (state == "HI") {
+    // //     var fullStateName = "hawaii";
+    // //     $(".state_name").text("Hawaii");
+    // //   }
+    // //     if (state == "ID") {
+    // //       var fullStateName = "idaho";
+    // //       $(".state_name").text("Idaho");
+    // //     }
+    // //     if (state == "IL") {
+    // //       var fullStateName = "illinois";
+    // //       $(".state_name").text("Illinois");
+    // //     }
+    // //     if (state == "IN") {
+    // //       var fullStateName = "indiana";
+    // //     $(".state_name").text("Indiana");
+    // //   }
+    // //   if (state == "IA") {
+    // //     var fullStateName = "iowa";
+    // //     $(".state_name").text("Iowa");
+    // //   }
+    // //   if (state == "KS") {
+    // //     var fullStateName = "kansas";
+    // //     $(".state_name").text("Kansas");
+    // //   }
+    // //   if (state == "KY") {
+    // //     var fullStateName = "kentucky";
+    // //     $(".state_name").text("Kentucky");
+    // //   }
+    // //     if (state == "LA") {
+    // //       var fullStateName = "louisiana";
+    // //       $(".state_name").text("Louisiana");
+    // //     }
+    // //     if (state == "ME") {
+    // //       var fullStateName = "maine";
+    // //       $(".state_name").text("Maine");
+    // //     }
+    // //     if (state == "MD") {
+    // //       var fullStateName = "maryland";
+    // //     $(".state_name").text("Maryland");
+    // //   }
+    // //   if (state == "MA") {
+    // //     var fullStateName = "massachusetts";
+    // //     $(".state_name").text("Massachusetts");
+    // //   }
+    // //   if (state == "MI") {
+    // //     var fullStateName = "michigan";
+    // //     $(".state_name").text("Michigan");
+    // //   }
+    // //   if (state == "MN") {
+    // //     var fullStateName = "minnesota";
+    // //     $(".state_name").text("Minnesota");
+    // //   }
+    // //     if (state == "MS") {
+    // //       var fullStateName = "mississippi";
+    // //       $(".state_name").text("Mississippi");
+    // //     }
+    // //     if (state == "MO") {
+    // //       var fullStateName = "missouri";
+    // //       $(".state_name").text("Missouri");
+    // //     }
+    // //     if (state == "MT") {
+    // //       var fullStateName = "montana";
+    // //     $(".state_name").text("Montana");
+    // //   }
+    // //   if (state == "NE") {
+    // //     var fullStateName = "nebraska";
+    // //     $(".state_name").text("Nebraska");
+    // //   }
+    // //   if (state == "NV") {
+    // //     var fullStateName = "nevada";
+    // //     $(".state_name").text("Nevada");
+    // //   }
+    // //   if (state == "NH") {
+    // //     var fullStateName = "new-hampshire";
+    // //     $(".state_name").text("New Hampshire");
+    // //   }
+    // //     if (state == "NJ") {
+    // //       var fullStateName = "new-jersey";
+    // //       $(".state_name").text("New Jersey");
+    // //     }
+    // //     if (state == "NM") {
+    // //       var fullStateName = "new-mexico";
+    // //       $(".state_name").text("New Mexico");
+    // //     }
+    // //     if (state == "NY") {
+    // //       var fullStateName = "new-york";
+    // //     $(".state_name").text("New York");
+    // //   }
+    // //   if (state == "NC") {
+    // //     var fullStateName = "north-carolina";
+    // //     $(".state_name").text("North Carolina");
+    // //   }
+    // //   if (state == "ND") {
+    // //     var fullStateName = "north-dakota";
+    // //     $(".state_name").text("North Dakota");
+    // //   }
+    // //   if (state == "OH") {
+    // //     var fullStateName = "ohio";
+    // //     $(".state_name").text("Ohio");
+    // //   }
+    // //     if (state == "OK") {
+    // //       var fullStateName = "oklahoma";
+    // //       $(".state_name").text("Oklahoma");
+    // //     }
+    // //     if (state == "OR") {
+    // //       var fullStateName = "oregon";
+    // //       $(".state_name").text("Oregon");
+    // //     }
+    // //     if (state == "PA") {
+    // //       var fullStateName = "pennsylvania";
+    // //     $(".state_name").text("Pennsylvania");
+    // //   }
+    // //   if (state == "RI") {
+    // //     var fullStateName = "rhode-island";
+    // //     $(".state_name").text("Rhode Island");
+    // //   }
+    // //   if (state == "SC") {
+    // //     var fullStateName = "south-carolina";
+    // //     $(".state_name").text("South Carolina");
+    // //   }
+    // //   if (state == "SD") {
+    // //     var fullStateName = "south-dakota";
+    // //     $(".state_name").text("South Dakota");
+    // //   }
+    // //     if (state == "TN") {
+    // //       var fullStateName = "tennessee";
+    // //       $(".state_name").text("Tennessee");
+    // //     }
+    // //     if (state == "TX") {
+    // //       var fullStateName = "texas";
+    // //       $(".state_name").text("Texas");
+    // //     }
+    // //     if (state == "UT") {
+    // //       var fullStateName = "utah";
+    // //       $(".state_name").text("Utah");
+    // //     }
+    // //     if (state == "VT") {
+    // //       var fullStateName = "vermont";
+    // //     $(".state_name").text("Vermont");
+    // //   }
+    // //   if (state == "VA") {
+    // //     var fullStateName = "virginia";
+    // //     $(".state_name").text("Virginia");
+    // //   }
+    // //   if (state == "WA") {
+    // //     var fullStateName = "washington";
+    // //     $(".state_name").text("Washington");
+    // //   }
+    // //   if (state == "WV") {
+    // //     var fullStateName = "west-virginia";
+    // //     $(".state_name").text("West Virginia");
+    // //   }
+    // //     if (state == "WI") {
+    // //       var fullStateName = "wisconsin";
+    // //       $(".state_name").text("Wisconsin");
+    // //     }
+    // //     if (state == "WY") {
+    // //       var fullStateName = "wyoming";
+    // //       $(".state_name").text("Wyoming");
+    // //     }
+
+});
+
+
+</script>
