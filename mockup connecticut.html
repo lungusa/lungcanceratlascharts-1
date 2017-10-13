@@ -26,6 +26,43 @@
     padding: 15px;
     font-size: 15px !important;
   }
+
+  #changeStateDiv{
+    text-align: center;
+    margin: 10px
+  }
+  #changeState {
+    background: #3a75c4;
+    font-family: 'lato', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    height: 50px;
+    width: 150px;
+    border-radius: 25px;
+    border: none;
+    font-size: 18px;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  #changeState:hover {
+    background: #bad80a;
+  }
+  .backToTop{
+    color: #3a75c4;
+    cursor: pointer;
+    margin: 10px;
+  }
+  .backToTop:hover{
+    color: #bad80a;
+  }
+  @media (max-width: 500px){
+    #changeState{
+      font-size: 14px;
+      height: 41px;
+      width: 130px;
+    }
+  }
 </style>
 
 <p>
@@ -41,8 +78,9 @@
   This report summarizes the available data on state-specific lung cancer burden. It provides policy makers, researchers, health care practitioners, and anyone committed to ending lung cancer with a one-stop resource for identifying where their state can
   best focus its resources to decrease the burden of lung cancer.
 </p>
-
-<button id="changeState" type="button" name="button">Change State</button>
+<div id="changeStateDiv">
+  <button id="changeState" type="button" name="button">Change State</button>
+</div>
 
 <h2 class="change">Connecticut</h2>
 
@@ -68,7 +106,7 @@
 </div>
 
 <p class="chartExplain">
-  The dotted line in the chart shows that, on average, each one point increase in the smoking rate for a state equals an increase of 2.4 points in the lung cancer incidence (the number of new lung cancer cases) rate. <span class="change">For Connecticut, not only is the smoking rate below the national average, but the lung cancer incidence rate is higher than would be expected for this smoking rate, as shown by the Connecticut data point being below the dotted line in the chart. This suggests that people living in Connecticut might have higher exposures to other risk factors besides smoking.</span>
+  The line in the chart shows that, on average, each one point increase in the smoking rate for a state equals an increase of 2.4 points in the lung cancer incidence (the number of new lung cancer cases) rate. <span class="change">For Connecticut, not only is the smoking rate below the national average, but the lung cancer incidence rate is higher than would be expected for this smoking rate, as shown by the Connecticut data point being below the line in the chart. This suggests that people living in Connecticut might have higher exposures to other risk factors besides smoking.</span>
 </p>
 
 <p>
@@ -101,6 +139,13 @@
   </p>
 </div>
 
+<div class="backToTop">
+  <article class="">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
+  </article>
+</div>
+
+
 <hr>
 
 <h4>Early Detection</h4>
@@ -117,6 +162,11 @@
   to access high-quality centers offering the service, such as those accredited by the American College of Radiology. Patients may benefit from a greater number of accredited centers in their state as can improve the chances of a center being nearby and
   their ability to get screened.
 </p>
+<div class="backToTop">
+  <article class="">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
+  </article>
+</div>
 
 
 <hr>
@@ -133,6 +183,12 @@
 <!-- CHART 2 -->
 <div class="chart chart2">
   <div id="item-834347790" class="templateComponent" style="display: inline;"></div>
+</div>
+
+<div class="backToTop">
+  <article class="">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
+  </article>
 </div>
 
 <hr>
@@ -188,6 +244,11 @@
   <div id="item-835201207" class="templateComponent" style="display: inline;"></div>
 </div>
 
+<div class="backToTop">
+  <article class="">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
+  </article>
+</div>
 <hr>
 <h4>Surgical Treatment</h4>
 <p>
@@ -205,6 +266,11 @@
 <div class="chart chart6">
   <div id="item-835201275" class="templateComponent" style="display: inline;"></div>
 
+</div>
+<div class="backToTop">
+  <article class="">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
+  </article>
 </div>
 
 <hr>
@@ -235,6 +301,15 @@
 <script type="text/javascript">
   $("#changeState").on("click", function() {
     $("#location").click();
+  })
+
+  $(".backToTop").on("click", function(){
+    // $(document).scrollTop(80);
+    var pos = $(window).scrollTop();
+    // $(window).scrollTop(pos-400);
+    // $("html, body").animate({ scrollTop: pos-700 }, 200);
+    $("html, body").animate({ scrollTop: pos-pos }, 200);
+
   })
 
   $(document).ready(function() {
