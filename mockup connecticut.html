@@ -28,7 +28,6 @@
   }
 </style>
 
-
 <p>
   Nearly a quarter of a million American will be diagnosed with lung cancer this year, or one every two and a half minutes. It is the leading cancer killer in the United States, accounting for about one in four cancer deaths. The five-year survival rate
   for lung cancer is only less than one in five (18.1%), much lower than those for many other common cancers. Less than half of those diagnosed with lung cancer will still be alive a year later. Lung cancer can be prevented, and new research has shown
@@ -42,6 +41,8 @@
   This report summarizes the available data on state-specific lung cancer burden. It provides policy makers, researchers, health care practitioners, and anyone committed to ending lung cancer with a one-stop resource for identifying where their state can
   best focus its resources to decrease the burden of lung cancer.
 </p>
+
+<button id="changeState" type="button" name="button">Change State</button>
 
 <h2 class="change">Connecticut</h2>
 
@@ -232,6 +233,10 @@
 </p>
 
 <script type="text/javascript">
+  $("#changeState").on("click", function() {
+    $("#location").click();
+  })
+
   $(document).ready(function() {
     // chart menu blue;
     // $("#chart .highcharts-button rect").attr("fill", "#3a75c4");
