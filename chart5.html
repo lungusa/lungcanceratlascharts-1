@@ -44,6 +44,9 @@
   .highcharts-xaxis-labels {
     font-family: 'Lato', sans-serif !important;
   }
+  #datatable{
+    display: none;
+  }
 
   @media (max-width: 700px) {
     #chart5 {
@@ -59,17 +62,17 @@
     <tr>
       <th></th>
       <th id="stateChart">Connecticut</th>
-      <th>All (18) States</th>
+      <th>National</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Early (State vs. National)</th>
+      <th>Early</th>
       <td id="stateEarly">50</td>
       <td id="nationalEarly">18.9</td>
     </tr>
     <tr>
-      <th>Late (State vs. National)</th>
+      <th>Late</th>
       <td id="stateLate">50</td>
       <td id="nationalLate">49.8</td>
     </tr>
@@ -313,7 +316,7 @@
       type: 'column'
     },
     title: {
-      text: 'Percent of Cases by State at Diagnosis'
+      text: 'Percent of Cases by Stage at Diagnosis'
     },
     yAxis: {
       allowDecimals: true,
@@ -337,7 +340,9 @@
   $("#chart5 .highcharts-series-group > .highcharts-color-0 > rect:eq(1)").css("fill", "#7fba00");
   $("#chart5 .highcharts-series-group > .highcharts-color-1 > rect:eq(0)").css("fill", "#3a75c4");
   $("#chart5 .highcharts-series-group > .highcharts-color-1 > rect:eq(1)").css("fill", "#3a75c4");
-  $("#chart5 .highcharts-title > tspan").html("Percent of Cases by State at Diagnosis (" + state + ")");
+  if (state) {
+    $("#chart5 .highcharts-title > tspan").html("Percent of Cases by Stage at Diagnosis (" + state + ")");
+  }
   $("#chart5 .highcharts-credits").html("");
 
 
