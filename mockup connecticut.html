@@ -1,4 +1,9 @@
 <style media="screen">
+  div#intro p{
+    font-size: 16px;
+    line-height: 25px;
+  }
+
   .highcharts-menu hr {
     margin: 0 !important;
   }
@@ -62,6 +67,10 @@
     color: #bad80a;
   }
   @media (max-width: 500px){
+    div#intro p{
+      font-size: 16px;
+      line-height: 25px;
+    }
     #changeState{
       font-size: 14px;
       height: 41px;
@@ -73,20 +82,22 @@
     }
   }
 </style>
+<div id="intro">
+  <p>
+    Nearly a quarter of a million American will be diagnosed with lung cancer this year, or one every two and a half minutes. It is the leading cancer killer in the United States, accounting for about one in four cancer deaths. The five-year survival rate
+    for lung cancer is only less than one in five (18.1%), much lower than those for many other common cancers. Less than half of those diagnosed with lung cancer will still be alive a year later. Lung cancer can be prevented, and new research has shown
+    that screening can catch more cases earlier and save lives.
+  </p>
+  <p>
+    However, the burden of lung cancer is not the same everywhere. Some states have much higher rates of new cases than others, or much lower survival rates. Treatment, exposure to risk factors, and access to screening facilities also varies from state to
+    state.
+  </p>
+  <p>
+    This report summarizes the available data on state-specific lung cancer burden. It provides policy makers, researchers, health care practitioners, and anyone committed to ending lung cancer with a one-stop resource for identifying where their state can
+    best focus its resources to decrease the burden of lung cancer.
+  </p>
+</div>
 
-<p>
-  Nearly a quarter of a million American will be diagnosed with lung cancer this year, or one every two and a half minutes. It is the leading cancer killer in the United States, accounting for about one in four cancer deaths. The five-year survival rate
-  for lung cancer is only less than one in five (18.1%), much lower than those for many other common cancers. Less than half of those diagnosed with lung cancer will still be alive a year later. Lung cancer can be prevented, and new research has shown
-  that screening can catch more cases earlier and save lives.
-</p>
-<p>
-  However, the burden of lung cancer is not the same everywhere. Some states have much higher rates of new cases than others, or much lower survival rates. Treatment, exposure to risk factors, and access to screening facilities also varies from state to
-  state.
-</p>
-<p>
-  This report summarizes the available data on state-specific lung cancer burden. It provides policy makers, researchers, health care practitioners, and anyone committed to ending lung cancer with a one-stop resource for identifying where their state can
-  best focus its resources to decrease the burden of lung cancer.
-</p>
 <div id="changeStateDiv">
   <button id="changeState" type="button" name="button">Change State</button>
 </div>
