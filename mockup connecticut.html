@@ -34,7 +34,7 @@
     text-align: center;
     justify-content: center;
     padding: 15px;
-    font-size: 15px !important;
+    font-size: 16px !important;
   }
 
   #changeStateDiv{
@@ -332,7 +332,18 @@
 
   })
 
+  // removes all legends except for 4 bar chart
+  var removeLegends = function(){
+    var chartLegends = $(".highcharts-legend");
+    for (var i = 0; i < chartLegends.length; i++) {
+      if (i != 4){
+        $(chartLegends[i]).remove();
+      }
+    }
+  }
+
   $(document).ready(function() {
+    setTimeout(removeLegends, 750);
     // chart menu blue;
     // $("#chart .highcharts-button rect").attr("fill", "#3a75c4");
     // $("#chart2 .highcharts-button rect").attr("fill", "#3a75c4");
