@@ -3,7 +3,7 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 <style media="screen">
-  #chart {
+  #chartUno {
     min-width: 310px;
     width: 100%;
     /*height must be a minimum of 860px*/
@@ -26,6 +26,8 @@
 
   .highcharts-legend {
     font-family: 'Lato', sans-serif !important;
+    /*no legend at request of research team*/
+    display: none;
   }
 
   .highcharts-axis-labels {
@@ -37,7 +39,7 @@
   }
 
   @media (max-width: 700px) {
-    #chart {
+    #chartUno {
       height: 1000px;
     }
     .highcharts-color-0 {
@@ -51,7 +53,7 @@
 
 
 <!-- 860px min height before font gets messed up -->
-<div id="chart" style="height: 400px; margin: 0 auto"></div>
+<div id="chartUno" style="height: 400px; margin: 0 auto"></div>
 
 <script type="text/javascript">
   var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52];
@@ -61,7 +63,7 @@
   ];
 
 
-  Highcharts.chart('chart', {
+  Highcharts.chart('chartUno', {
     xAxis: {
       title: {
         enabled: true,
