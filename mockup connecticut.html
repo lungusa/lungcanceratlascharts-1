@@ -118,7 +118,7 @@
     }
 
     .tocDiv {
-      border: 1px solid #ececec;
+      border: 2px solid lightgray;
       border-radius: 10px;
       height: 25px;
       width: 250px;
@@ -131,34 +131,34 @@
     }
 
     .tocDiv:hover {
-      border: 1px solid #bad80a;
+      border: 2px solid #bad80a;
     }
   </style>
   <div class="tableOfContents">
+
+    <select id="tocSelect" name="">
+      <option >Table of Contents</option>
+      <option id="preventionSel" value="#prevention">1. Prevention</option>
+      <option id="earlyDetectionSel" value="#earlyDetection">2. Early Detection</option>
+      <option id="numbersSel" value="#numbers">3. Lung Cancer by the Numbers</option>
+      <option id="ratesSel" value="#rates">4. Lung Cancer Rates</option>
+      <option id="surgicalTreatmentSel" value="#surgicalTreatment">5. Surgical Treatment</option>
+      <option id="summarySel" value="#summary">6. Summary</option>
+    </select>
+
     <p>
       Table of Contents
     </p>
-
-    <select id="tocSelect" name="">
-      <option ></option>
-      <option id="preventionSel" value="#prevention">Prevention</option>
-      <option id="earlyDetectionSel" value="#earlyDetection">Early Detection</option>
-      <option id="numbersSel" value="#numbers">Lung Cancer by the Numbers</option>
-      <option id="ratesSel" value="#rates">Lung Cancer Rates</option>
-      <option id="surgicalTreatmentSel" value="#surgicalTreatment">Surgical Treatment</option>
-      <option id="summarySel" value="#summary">Summary</option>
-    </select>
-
     <div class="row">
       <div class="col lg6">
-        <div class="prevention tocDiv">Prevention</div>
-        <div class="earlyDetection tocDiv">Early Detection</div>
-        <div class="numbers tocDiv">Lung Cancer by the Numbers</div>
+        <div class="prevention tocDiv">1. Prevention</div>
+        <div class="earlyDetection tocDiv">2. Early Detection</div>
+        <div class="numbers tocDiv">3. Lung Cancer by the Numbers</div>
       </div>
       <div class="col lg6">
-        <div class="rates tocDiv">Lung Cancer Rates</div>
-        <div class="surgicalTreatment tocDiv">Surgical Treatment</div>
-        <div class="summary tocDiv">Summary</div>
+        <div class="rates tocDiv">4. Lung Cancer Rates</div>
+        <div class="surgicalTreatment tocDiv">5. Surgical Treatment</div>
+        <div class="summary tocDiv">6. Summary</div>
       </div>
     </div>
 
