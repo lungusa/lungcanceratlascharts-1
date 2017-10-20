@@ -1,14 +1,23 @@
 <link rel="stylesheet" href="http://www.lung.org/css/materialize.css" media="screen" title="no title" charset="utf-8">
 <style media="screen">
+  /*INTRO*/
+
   div#intro p {
     font-size: 16px;
     line-height: 25px;
   }
 
-  .tableOfContents ul {
-    font-size: 16px;
-    line-height: 19px;
+  /*TABLE OF CONTENTS*/
+
+  #tocSelect {
+    font-family: 'lato', sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 25px;
+    margin-bottom: 15px;
   }
+
+  /*removing large margins in traditional HR element from lung stylesheet*/
 
   .highcharts-menu hr {
     margin: 0 !important;
@@ -16,16 +25,12 @@
 
   /*bullet points adjustment = .box*/
 
-  .box {
-    /*border: 1px solid gray;
-    padding: 30px;
-    margin: 10px;*/
-  }
-
   .box li {
     font-size: 15px;
     line-height: 20px;
   }
+
+  /*copy changing between states*/
 
   .change {
     /*color: orange;*/
@@ -44,28 +49,6 @@
     padding: 15px;
     font-size: 16px !important;
   }
-
-  /*#changeStateDiv{
-    text-align: center;
-    margin: 10px
-  }
-  #changeState {
-    background: #3a75c4;
-    font-family: 'lato', sans-serif;
-    font-weight: 700;
-    color: #ffffff;
-    height: 50px;
-    width: 150px;
-    border-radius: 25px;
-    border: none;
-    font-size: 18px;
-    padding: 12px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  #changeState:hover {
-    background: #bad80a;
-  }*/
 
   .backToTop {
     color: #3a75c4;
@@ -108,35 +91,8 @@
     best focus its resources to decrease the burden of lung cancer.
   </p>
 
-  <style media="screen">
-    #tocSelect {
-      font-family: 'lato', sans-serif;
-      font-size: 18px;
-      padding: 10px;
-      border-radius: 25px;
-      margin-bottom: 15px;
-    }
-
-    .tocDiv {
-      border: 2px solid lightgray;
-      border-radius: 10px;
-      height: 25px;
-      width: 250px;
-      padding: 9px;
-      padding-bottom: 4px;
-      margin-left: 10px;
-      margin-top: 5px;
-      cursor: pointer;
-      color: #3a75c4;
-    }
-
-    .tocDiv:hover {
-      border: 2px solid #bad80a;
-    }
-  </style>
   <div class="tableOfContents">
-
-    <select id="tocSelect" name="">
+    <select id="tocSelect">
       <option value="">Table of Contents</option>
       <option id="preventionSel" value="#prevention">1. Prevention</option>
       <option id="earlyDetectionSel" value="#earlyDetection">2. Early Detection</option>
@@ -145,44 +101,6 @@
       <option id="surgicalTreatmentSel" value="#surgicalTreatment">5. Surgical Treatment</option>
       <option id="summarySel" value="#summary">6. Summary</option>
     </select>
-
-    <!-- <p>
-      Table of Contents
-    </p>
-    <div class="row">
-      <div class="col lg6">
-        <div class="prevention tocDiv">1. Prevention</div>
-        <div class="earlyDetection tocDiv">2. Early Detection</div>
-        <div class="numbers tocDiv">3. Lung Cancer by the Numbers</div>
-      </div>
-      <div class="col lg6">
-        <div class="rates tocDiv">4. Lung Cancer Rates</div>
-        <div class="surgicalTreatment tocDiv">5. Surgical Treatment</div>
-        <div class="summary tocDiv">6. Summary</div>
-      </div>
-    </div> -->
-
-
-    <!-- <ul class="tocUL">
-      <li class="tocLI"><a id="prevention" href="#prevention">Prevention</a></li>
-      <li class="tocLI"><a id="earlyDetection" href="#earlyDetection">Early Detection</a></li>
-      <li class="tocLI"><a id="numbers" href="#numbers">Lung Cancer by the Numbers</a></li>
-      <li class="tocLI"><a id="rates" href="#rates">Lung Cancer Rates</a></li>
-      <li class="tocLI"><a id="surgicalTreatment" href="#surgicalTreatment">Surgical Treatment</a></li>
-      <li class="tocLI"><a id="summary" href="#summary">Summary</a></li>
-    </ul> -->
-    <script type="text/javascript">
-      $("#tocSelect").on("change", function() {
-        if($(this).val() !== ""){
-          window.location = $(this).val();
-        }
-      })
-
-      // $(".tocDiv").on("click", function() {
-      //   var link = $(this).attr("class").split(" ")[0];
-      //   window.location = "#" + link;
-      // })
-    </script>
   </div>
 </div>
 
@@ -205,6 +123,7 @@
   </ul>
   <div class="sotc">
     <!-- SOTC GRADES HERE -->
+    <!-- http://www.lung.org/local-content/connecticut/our-initiatives/sotc.html -->
   </div>
 </div>
 
@@ -413,18 +332,18 @@
 <script type="text/javascript">
   $("#changeState").on("click", function() {
     $("#location").click();
-  })
+  });
 
   $(".backToTop").on("click", function() {
-    // $(document).scrollTop(80);
     var pos = $(window).scrollTop();
-    // $(window).scrollTop(pos-400);
-    // $("html, body").animate({ scrollTop: pos-700 }, 200);
-    $("html, body").animate({
-      scrollTop: pos - pos
-    }, 200);
+    $("html, body").animate({ scrollTop: pos - pos }, 200);
+  });
 
-  })
+  $("#tocSelect").on("change", function() {
+    if ($(this).val() !== "") {
+      window.location = $(this).val();
+    }
+  });
 
   // removes all legends except for 4 bar chart
   var removeLegends = function() {
@@ -435,28 +354,7 @@
       }
     }
   }
-
   $(document).ready(function() {
     setTimeout(removeLegends, 750);
-    // chart menu blue;
-    // $("#chart .highcharts-button rect").attr("fill", "#3a75c4");
-    // $("#chart2 .highcharts-button rect").attr("fill", "#3a75c4");
-    // $("#chart3 .highcharts-button rect").attr("fill", "#3a75c4");
-    // $("#chart4 .highcharts-button rect").attr("fill", "#3a75c4");
-    // $("#chart5 .highcharts-button rect").attr("fill", "#3a75c4");
-    // $("#chart6 .highcharts-button rect").attr("fill", "#3a75c4");
-    //
-    // $("#chart .highcharts-button rect").attr("fill", "#3a75c4");
-    // $("#chart2 .highcharts-button rect").attr("fill", "#3a75c4");
-    // $("#chart3 .highcharts-button rect").attr("fill", "#3a75c4");
-    // $("#chart4 .highcharts-button rect").attr("fill", "#3a75c4");
-    // $("#chart5 .highcharts-button rect").attr("fill", "#3a75c4");
-    // $("#chart6 .highcharts-button rect").attr("fill", "#3a75c4");
-    // $("#chart .highcharts-button path").attr("stroke", "#fff");
-    // $("#chart2 .highcharts-button path").attr("stroke", "#fff");
-    // $("#chart3 .highcharts-button path").attr("stroke", "#fff");
-    // $("#chart4 .highcharts-button path").attr("stroke", "#fff");
-    // $("#chart5 .highcharts-button path").attr("stroke", "#fff");
-    // $("#chart6 .highcharts-button path").attr("stroke", "#fff");
   })
 </script>
