@@ -11,7 +11,7 @@
 
   #tocSelect {
     font-family: 'lato', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     padding: 10px;
     border-radius: 25px;
     margin-bottom: 15px;
@@ -136,34 +136,44 @@
   The line in the chart shows that, on average, each one point increase in the smoking rate for a state equals an increase of 2.4 points in the lung cancer incidence (the number of new lung cancer cases) rate. <span class="change">For Connecticut, not only is the smoking rate below the national average, but the lung cancer incidence rate is higher than would be expected for this smoking rate, as shown by the Connecticut data point being below the line in the chart. This suggests that people living in Connecticut might have higher exposures to other risk factors besides smoking.</span>
 </p>
 
-<p>
-  <strong>Radon</strong> is the second leading cause of lung cancer. Radon is a colorless and odorless can seep into homes and buildings. Some geographical areas have naturally higher radon rates than others. The US EPA has set an action level of 4 pCi/L.
-  At or above this level of radon, the EPA recommends you take corrective measures to reduce your exposure to radon gas.
-</p>
+<div class="row">
+  <div class="col l6">
+    <p>
+      <strong>Radon</strong> is the second leading cause of lung cancer. Radon is a colorless and odorless can seep into homes and buildings. Some geographical areas have naturally higher radon rates than others. The US EPA has set an action level of
+      4 pCi/L. At or above this level of radon, the EPA recommends you take corrective measures to reduce your exposure to radon gas.
+    </p>
 
-<div class="box">
-  <ul>
-    <li class="change">41 Counties in Connecticut are considered Zone 1 which means they have predicted average indoor radon screening levels greater than 4 pCi/L.</li>
-    <li class="change">22 counties in Connecticut are considered Zone 2 which means they have a predicted average indoor radon screening levels from 2 to 4 pCi/L</li>
-  </ul>
-  <p>
-    For more information on radon testing and removal, visit <a href="http://www.lung.org/radon">Lung.org/radon</a>
-  </p>
-</div>
+    <div class="box">
+      <ul>
+        <li class="change">41 Counties in Connecticut are considered Zone 1 which means they have predicted average indoor radon screening levels greater than 4 pCi/L.</li>
+        <li class="change">22 counties in Connecticut are considered Zone 2 which means they have a predicted average indoor radon screening levels from 2 to 4 pCi/L</li>
+      </ul>
+      <p>
+        For more information on radon testing and removal, visit <a href="http://www.lung.org/radon">Lung.org/radon</a>
+      </p>
+    </div>
 
-<p>
-  <strong>Air Pollution</strong> is a known risk factor of lung cancer.
-</p>
+  </div>
+  <div class="col l1">
+    <!--divider-->
+  </div>
+  <div class="col l5">
 
-<div class="box">
-  <ul>
-    <li>Each year the American Lung Association puts out the &ldquo;State of the Air 2017&rdquo; report. The 2017 report grades U.S. counties on harmful ozone (smog) and particle pollution recorded over a three-year period, and details trends for metropolitan
-      areas over the past decade. The report ranks also both the cleanest and most polluted areas in the country.</li>
-    <li class="change"><a href="http://www.lung.org/our-initiatives/healthy-air/sota/city-rankings/states/">View the Connecticut report card</a></li>
-  </ul>
-  <p>
-    For more information about air pollution, visit <a href="/preview!www.lung.org/healthy-air">lung.org/healthy-air</a>
-  </p>
+    <p>
+      <strong>Air Pollution</strong> is a known risk factor of lung cancer.
+    </p>
+
+    <div class="box">
+      <ul>
+        <li>Each year the American Lung Association puts out the &ldquo;State of the Air 2017&rdquo; report. The 2017 report grades U.S. counties on harmful ozone (smog) and particle pollution recorded over a three-year period, and details trends for metropolitan
+          areas over the past decade. The report ranks also both the cleanest and most polluted areas in the country.</li>
+        <li class="change"><a href="http://www.lung.org/our-initiatives/healthy-air/sota/city-rankings/states/">View the Connecticut report card</a></li>
+      </ul>
+      <p>
+        For more information about air pollution, visit <a href="/preview!www.lung.org/healthy-air">lung.org/healthy-air</a>
+      </p>
+    </div>
+  </div>
 </div>
 
 <div class="backToTop">
@@ -189,6 +199,8 @@
   to access high-quality centers offering the service, such as those accredited by the American College of Radiology. Patients may benefit from a greater number of accredited centers in their state as can improve the chances of a center being nearby and
   their ability to get screened.
 </p>
+
+
 <div class="backToTop">
   <article class="">
     <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
@@ -336,7 +348,9 @@
 
   $(".backToTop").on("click", function() {
     var pos = $(window).scrollTop();
-    $("html, body").animate({ scrollTop: pos - pos }, 200);
+    $("html, body").animate({
+      scrollTop: pos - pos
+    }, 200);
   });
 
   $("#tocSelect").on("change", function() {
