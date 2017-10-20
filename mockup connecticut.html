@@ -1,15 +1,67 @@
 <style media="screen">
-  .box{
+  .highcharts-menu hr {
+    margin: 0 !important;
+  }
+
+  .box {
+    /*border: 1px solid gray;
+    padding: 30px;
+    margin: 10px;*/
+  }
+
+  .change {
+    /*color: orange;*/
+  }
+
+  .chart {
     border: 1px solid gray;
-    padding: 10px;
-  }
-  .change{
-    color: orange;
-  }
-  .chart{
-    border: 1px solid green;
+    padding: 8px;
     /*height: 200px;
     background-color: #00a5db;*/
+  }
+
+  .chartExplain {
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+    font-size: 15px !important;
+  }
+
+  #changeStateDiv{
+    text-align: center;
+    margin: 10px
+  }
+  #changeState {
+    background: #3a75c4;
+    font-family: 'lato', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    height: 50px;
+    width: 150px;
+    border-radius: 25px;
+    border: none;
+    font-size: 18px;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  #changeState:hover {
+    background: #bad80a;
+  }
+  .backToTop{
+    color: #3a75c4;
+    cursor: pointer;
+    margin: 10px;
+  }
+  .backToTop:hover{
+    color: #bad80a;
+  }
+  @media (max-width: 500px){
+    #changeState{
+      font-size: 14px;
+      height: 41px;
+      width: 130px;
+    }
   }
 </style>
 
@@ -26,10 +78,13 @@
   This report summarizes the available data on state-specific lung cancer burden. It provides policy makers, researchers, health care practitioners, and anyone committed to ending lung cancer with a one-stop resource for identifying where their state can
   best focus its resources to decrease the burden of lung cancer.
 </p>
+<div id="changeStateDiv">
+  <button id="changeState" type="button" name="button">Change State</button>
+</div>
 
 <h2 class="change">Connecticut</h2>
 
-<h3>Prevention</h3>
+<h4>Prevention</h4>
 <p>
   <strong>Tobacco</strong> use is the leading risk factor for lung cancer. Smoking and second-hand smoke have both been shown to cause lung cancer.
 </p>
@@ -46,14 +101,12 @@
 </div>
 
 <div class="chart chart1">
-  RELATIONSHIP BETWEEN ADULT SMOKING AND LUNG CANCER INCIDENCE RATE BY STATE
-  SCATTERPLOT
   <div id="item-834308506" class="templateComponent" style="display: inline;"></div>
 
 </div>
 
-<p>
-  The dotted line in the chart shows that, on average, each one point increase in the smoking rate for a state equals an increase of 2.4 points in the lung cancer incidence (the number of new lung cancer cases) rate. <span class="change">For Connecticut, not only is the smoking rate below the national average, but the lung cancer incidence rate is higher than would be expected for this smoking rate, as shown by the Connecticut data point being below the dotted line in the chart. This suggests that people living in Connecticut might have higher exposures to other risk factors besides smoking.</span>
+<p class="chartExplain">
+  The line in the chart shows that, on average, each one point increase in the smoking rate for a state equals an increase of 2.4 points in the lung cancer incidence (the number of new lung cancer cases) rate. <span class="change">For Connecticut, not only is the smoking rate below the national average, but the lung cancer incidence rate is higher than would be expected for this smoking rate, as shown by the Connecticut data point being below the line in the chart. This suggests that people living in Connecticut might have higher exposures to other risk factors besides smoking.</span>
 </p>
 
 <p>
@@ -77,8 +130,8 @@
 
 <div class="box">
   <ul>
-    <li>Each year the American Lung Association puts out the &ldquo;State of the Air 2017&rdquo; report. The 2017 report grades U.S. counties on harmful ozone (smog) and particle pollution recorded over a three-year period, and details trends for metropolitan areas over
-      the past decade. The report ranks also both the cleanest and most polluted areas in the country.</li>
+    <li>Each year the American Lung Association puts out the &ldquo;State of the Air 2017&rdquo; report. The 2017 report grades U.S. counties on harmful ozone (smog) and particle pollution recorded over a three-year period, and details trends for metropolitan
+      areas over the past decade. The report ranks also both the cleanest and most polluted areas in the country.</li>
     <li class="change"><a href="#">View the Connecticut report card</a></li>
   </ul>
   <p>
@@ -86,7 +139,16 @@
   </p>
 </div>
 
-<h3>Early Detection</h3>
+<div class="backToTop">
+  <article class="">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
+  </article>
+</div>
+
+
+<hr>
+
+<h4>Early Detection</h4>
 <p>
   Lung cancer screening using low-dose CT scan is recommended for those who meet the high-risk criteria:
 </p>
@@ -96,25 +158,41 @@
   <li>AND, are a current smoker, or have quit within the last 15 years</li>
 </ul>
 <p>
-  Screening for lung cancer with annual low-dose CT scans among those at high risk can reduce the lung cancer death rate by up to 20% by detecting tumors at early stages when it is more curable. For screening to be most effective, patients must be able to access high-quality centers offering the service, such as those accredited by the American College of Radiology. Patients may benefit from a greater number of accredited centers in their state as can improve the chances of a center being nearby and their ability to get screened.
+  Screening for lung cancer with annual low-dose CT scans among those at high risk can reduce the lung cancer death rate by up to 20% by detecting tumors at early stages when it is more curable. For screening to be most effective, patients must be able
+  to access high-quality centers offering the service, such as those accredited by the American College of Radiology. Patients may benefit from a greater number of accredited centers in their state as can improve the chances of a center being nearby and
+  their ability to get screened.
 </p>
+<div class="backToTop">
+  <article class="">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
+  </article>
+</div>
 
-<h3>Lung cancer by the numbers</h3>
+
+<hr>
+<h4>Lung cancer by the numbers</h4>
 <div class="box" class="change">
   <p>
-    Connecticut ranked 3rd among all states with 9.5 accredited lung cancer screening centers per million people, much better than the national rate of 4.8 centers per million people. This shows there are a high number of screening centers throughout the state available to the high-risk population in Connecticut. This increases the likelihood that an individual would have access to a screening center nearby and reduces a barrier to lung cancer screening.
+    Connecticut ranked 3rd among all states with 9.5 accredited lung cancer screening centers per million people, much better than the national rate of 4.8 centers per million people. This shows there are a high number of screening centers throughout the
+    state available to the high-risk population in Connecticut. This increases the likelihood that an individual would have access to a screening center nearby and reduces a barrier to lung cancer screening.
   </p>
 </div>
 
+<!-- CHART 2 -->
+<!-- CHART 2 -->
+<!-- CHART 2 -->
 <div class="chart chart2">
-  State Ranking by Centers Per Million People
-  51 bar chart
-  chart 4:::
   <div id="item-834347790" class="templateComponent" style="display: inline;"></div>
-
 </div>
 
-<h3>Lung Cancer Rates</h3>
+<div class="backToTop">
+  <article class="">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
+  </article>
+</div>
+
+<hr>
+<h4>Lung Cancer Rates</h4>
 <p>
   <strong>Incidence</strong>
 </p>
@@ -123,12 +201,12 @@
     Incidence is the number of new lung cancer cases diagnosed each year. <span class="change">The incidence rate in Connecticut is 61.0, about the same as the national rate of 60.4, and 25th best among all states.</span>
   </p>
 </div>
-<div class="chart chart3">
-  State Ranking By Incidence Rate
-  51 bar chart
-  chart 5:::
-  <div id="item-834347844" class="templateComponent" style="display: inline;"></div>
 
+<!-- CHART 3 -->
+<!-- CHART 3 -->
+<!-- CHART 3 -->
+<div class="chart chart3">
+  <div id="item-835159966" class="templateComponent" style="display: inline;"></div>
 </div>
 
 <p>
@@ -140,12 +218,11 @@
   </p>
 </div>
 
+<!-- CHART 4 -->
+<!-- CHART 4 -->
+<!-- CHART 4 -->
 <div class="chart chartFour">
-  State Ranking by Five Year Survival Rate
-  51 bar chart
-  CHART 3:::
-  <div id="item-834347965" class="templateComponent" style="display: inline;"></div>
-
+  <div id="item-835182233" class="templateComponent" style="display: inline;"></div>
 </div>
 
 <p>
@@ -160,27 +237,44 @@
   </p>
 </div>
 
+<!-- CHART 5 -->
+<!-- CHART 5 -->
+<!-- CHART 5 -->
 <div class="chart chart5">
-  Percent of Cases by Stage at Diagnosis and Five year Survival Rate
-  4 bar chart
-  chart 6 used
-
+  <div id="item-835201207" class="templateComponent" style="display: inline;"></div>
 </div>
 
-<h3>Surgical Treatment</h3>
+<div class="backToTop">
+  <article class="">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
+  </article>
+</div>
+<hr>
+<h4>Surgical Treatment</h4>
 <p>
-  Lung cancer can often be treated with surgery as part of the first course of treatment if it is at an early stage and has not spread outside of the lung and lymph nodes close to the lung. While surgery may not be an option for every patient, those who receive it as part of their initial treatment have higher survival rates than those who do not. Patients who are not healthy enough to undergo the procedure or whose cancer has spread too far may not be candidates for surgery. Other treatments may be recommended instead or in addition to surgery, such as chemotherapy, radiation, targeted therapy, or immunotherapy.
+  Lung cancer can often be treated with surgery as part of the first course of treatment if it is at an early stage and has not spread outside of the lung and lymph nodes close to the lung. While surgery may not be an option for every patient, those who
+  receive it as part of their initial treatment have higher survival rates than those who do not. Patients who are not healthy enough to undergo the procedure or whose cancer has spread too far may not be candidates for surgery. Other treatments may be
+  recommended instead or in addition to surgery, such as chemotherapy, radiation, targeted therapy, or immunotherapy.
 </p>
 <p>
   <span class="change">Connecticut had the 2nd best rate (out of the 48 states with data available) with 27.4% of cases undergoing surgery as part of the first course of treatment, a higher rate than nationally (21.0%).</span>
 </p>
 
+<!-- CHART 6 -->
+<!-- CHART 6 -->
+<!-- CHART 6 -->
 <div class="chart chart6">
-  State Ranking by Percent of cases Initially Treated with Surgery
-  51 bar chart
+  <div id="item-835201275" class="templateComponent" style="display: inline;"></div>
+
+</div>
+<div class="backToTop">
+  <article class="">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
+  </article>
 </div>
 
-<h3>Summary</h3>
+<hr>
+<h4>Summary</h4>
 <p>
   <span class="change">Despite having a below average smoking rate, Connecticut has a lung cancer incidence rate similar to average. However, the state also has more screening centers per population than average, which could contribute to having both the second best rate of surgery during the initial round of treatment and a better than average survival rate.</span>
 </p>
@@ -203,3 +297,41 @@
 <p>
   Maintaining a high number of quality, accredited screening centers will help ensure that both as many patients undergo surgery during their initial round of treatment and as high a survival rate as possible.
 </p>
+
+<script type="text/javascript">
+  $("#changeState").on("click", function() {
+    $("#location").click();
+  })
+
+  $(".backToTop").on("click", function(){
+    // $(document).scrollTop(80);
+    var pos = $(window).scrollTop();
+    // $(window).scrollTop(pos-400);
+    // $("html, body").animate({ scrollTop: pos-700 }, 200);
+    $("html, body").animate({ scrollTop: pos-pos }, 200);
+
+  })
+
+  $(document).ready(function() {
+    // chart menu blue;
+    // $("#chart .highcharts-button rect").attr("fill", "#3a75c4");
+    // $("#chart2 .highcharts-button rect").attr("fill", "#3a75c4");
+    // $("#chart3 .highcharts-button rect").attr("fill", "#3a75c4");
+    // $("#chart4 .highcharts-button rect").attr("fill", "#3a75c4");
+    // $("#chart5 .highcharts-button rect").attr("fill", "#3a75c4");
+    // $("#chart6 .highcharts-button rect").attr("fill", "#3a75c4");
+    //
+    // $("#chart .highcharts-button rect").attr("fill", "#3a75c4");
+    // $("#chart2 .highcharts-button rect").attr("fill", "#3a75c4");
+    // $("#chart3 .highcharts-button rect").attr("fill", "#3a75c4");
+    // $("#chart4 .highcharts-button rect").attr("fill", "#3a75c4");
+    // $("#chart5 .highcharts-button rect").attr("fill", "#3a75c4");
+    // $("#chart6 .highcharts-button rect").attr("fill", "#3a75c4");
+    // $("#chart .highcharts-button path").attr("stroke", "#fff");
+    // $("#chart2 .highcharts-button path").attr("stroke", "#fff");
+    // $("#chart3 .highcharts-button path").attr("stroke", "#fff");
+    // $("#chart4 .highcharts-button path").attr("stroke", "#fff");
+    // $("#chart5 .highcharts-button path").attr("stroke", "#fff");
+    // $("#chart6 .highcharts-button path").attr("stroke", "#fff");
+  })
+</script>

@@ -1,0 +1,369 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<style media="screen">
+  #chart3 {
+    min-width: 310px;
+    width: 100%;
+    /*height must be a minimum of 860px*/
+    min-height: 860px;
+    height: 1000px;
+    margin: 0 auto;
+  }
+
+  .highcharts-background {
+    fill: transparent;
+  }
+
+  /*body{
+    background: url("https://images.unsplash.com/photo-1463780324318-d1a8ddc05a11") no-repeat center center fixed;
+  }*/
+
+  .highcharts-title {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  .highcharts-legend {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  .highcharts-axis-labels {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  .highcharts-xaxis-labels {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  @media (max-width: 700px) {
+    #chart3 {
+      height: 1000px;
+    }
+    .highcharts-color-0 {
+      fill: #bad80a !important;
+    }
+    body {
+      /*background: url("https://images.unsplash.com/photo-1463780324318-d1a8ddc05a11");*/
+    }
+  }
+</style>
+
+<!-- 860px min height before font gets messed up -->
+<div id="chart3"></div>
+
+<script>
+  var chart3 = function() {
+    Highcharts.chart("chart3", {
+      chart: {
+        type: "bar"
+      },
+      title: {
+        text: "State Ranking by Centers Per Million People"
+      },
+      xAxis: {
+        categories: [
+          "Kentucky",
+          "West Virginia",
+          "Arkansas",
+          "Tennessee",
+          "Mississippi",
+          "Missouri",
+          "Maine",
+          "Indiana",
+          "Louisiana",
+          "Delaware",
+          "Alabama",
+          "Oklahoma",
+          "Ohio",
+          "North Carolina",
+          "Rhode Island",
+          "South Carolina",
+          "Illinois",
+          "New Hampshire",
+          "Michigan",
+          "Georgia",
+          "Pennsylvania",
+          "Vermont",
+          "Massachusetts",
+          "Iowa",
+          "Connecticut",
+          "Florida",
+          "Alaska",
+          "Nevada",
+          "Nation",
+          "Virginia",
+          "Kansas",
+          "New York",
+          "Wisconsin",
+          "Washington",
+          "Oregon",
+          "District of Columbia",
+          "New Jersey",
+          "Nebraska",
+          "Montana",
+          "South Dakota",
+          "North Dakota",
+          "Maryland",
+          "Texas",
+          "Minnesota",
+          "Arizona",
+          "Idaho",
+          "Wyoming",
+          "Hawaii",
+          "California",
+          "Colorado",
+          "New Mexico",
+          "Utah"
+        ]
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: "Incidence"
+        }
+      },
+      legend: {
+        reversed: true
+      },
+      plotOptions: {
+        series: {
+          stacking: "normal"
+        }
+      },
+      series: [{
+        name: "States",
+        data: [96.8,
+        81.6,
+        77.5,
+        77.2,
+        76.8,
+        76.2,
+        74.9,
+        74.5,
+        71.8,
+        71.8,
+        71.7,
+        71.6,
+        71.1,
+        70.9,
+        70.0,
+        69.1,
+        68.3,
+        68.1,
+        68.0,
+        67.7,
+        66.7,
+        66.7,
+        66.5,
+        65.1,
+        63.5,
+        63.3,
+        63.2,
+        63.1,
+        63.0,
+        62.4,
+        62.2,
+        62.2,
+        61.5,
+        60.4,
+        59.6,
+        59.6,
+        59.4,
+        59.1,
+        58.7,
+        58.2,
+        57.4,
+        57.2,
+        56.4,
+        55.5,
+        52.1,
+        51.4,
+        47.8,
+        47.5,
+        46.8,
+        45.8,
+        42.7,
+        29.1
+        ]
+      }],
+      dataLabels: {
+        style: {
+          fontFamily: "'Lato', sans-serif"
+        }
+      }
+    });
+    // hide credits
+    // $(".highcharts-credits").html("");
+  };
+
+  $(document).ready(function() {
+    chart3();
+    $("#chart3 .highcharts-color-0").css("fill", "#3a75c4");
+    $("#chart3 .highcharts-legend-item rect").css("fill", "#3a75c4");
+
+    var state = Cookies.get('state');
+    // bar on graph changes to green based on state selection
+    if (state == "KY") {
+      $("#chart3 .highcharts-series-group rect:nth-child(1)").css("fill", "#7fba00");
+    }
+    if (state == "WV") {
+      $("#chart3 .highcharts-series-group rect:nth-child(2)").css("fill", "#7fba00");
+    }
+    if (state == "AR") {
+      $("#chart3 .highcharts-series-group rect:nth-child(3)").css("fill", "#7fba00");
+    }
+    if (state == "TN") {
+      $("#chart3 .highcharts-series-group rect:nth-child(4)").css("fill", "#7fba00");
+    }
+    if (state == "MS") {
+      $("#chart3 .highcharts-series-group rect:nth-child(5)").css("fill", "#7fba00");
+    }
+    if (state == "MO") {
+      $("#chart3 .highcharts-series-group rect:nth-child(6)").css("fill", "#7fba00");
+    }
+    if (state == "ME") {
+      $("#chart3 .highcharts-series-group rect:nth-child(7)").css("fill", "#7fba00");
+    }
+    if (state == "IN") {
+      $("#chart3 .highcharts-series-group rect:nth-child(8)").css("fill", "#7fba00");
+    }
+    if (state == "LA") {
+      $("#chart3 .highcharts-series-group rect:nth-child(9)").css("fill", "#7fba00");
+    }
+    if (state == "DE") {
+      $("#chart3 .highcharts-series-group rect:nth-child(10)").css("fill", "#7fba00");
+    }
+    if (state == "AL") {
+      $("#chart3 .highcharts-series-group rect:nth-child(11)").css("fill", "#7fba00");
+    }
+    if (state == "OK") {
+      $("#chart3 .highcharts-series-group rect:nth-child(12)").css("fill", "#7fba00");
+    }
+    if (state == "OH") {
+      $("#chart3 .highcharts-series-group rect:nth-child(13)").css("fill", "#7fba00");
+    }
+    if (state == "NC") {
+      $("#chart3 .highcharts-series-group rect:nth-child(14)").css("fill", "#7fba00");
+    }
+    if (state == "RI") {
+      $("#chart3 .highcharts-series-group rect:nth-child(15)").css("fill", "#7fba00");
+    }
+    if (state == "SC") {
+      $("#chart3 .highcharts-series-group rect:nth-child(16)").css("fill", "#7fba00");
+    }
+    if (state == "IL") {
+      $("#chart3 .highcharts-series-group rect:nth-child(17)").css("fill", "#7fba00");
+    }
+    if (state == "NH") {
+      $("#chart3 .highcharts-series-group rect:nth-child(18)").css("fill", "#7fba00");
+    }
+    if (state == "MI") {
+      $("#chart3 .highcharts-series-group rect:nth-child(19)").css("fill", "#7fba00");
+    }
+    if (state == "GA") {
+      $("#chart3 .highcharts-series-group rect:nth-child(20)").css("fill", "#7fba00");
+    }
+    if (state == "PA") {
+      $("#chart3 .highcharts-series-group rect:nth-child(21)").css("fill", "#7fba00");
+    }
+    if (state == "VT") {
+      $("#chart3 .highcharts-series-group rect:nth-child(22)").css("fill", "#7fba00");
+    }
+    if (state == "MA") {
+      $("#chart3 .highcharts-series-group rect:nth-child(23)").css("fill", "#7fba00");
+    }
+    if (state == "IA") {
+      $("#chart3 .highcharts-series-group rect:nth-child(24)").css("fill", "#7fba00");
+    }
+    if (state == "CT") {
+      $("#chart3 .highcharts-series-group rect:nth-child(25)").css("fill", "#7fba00");
+    }
+    if (state == "FL") {
+      $("#chart3 .highcharts-series-group rect:nth-child(26)").css("fill", "#7fba00");
+    }
+    if (state == "AK") {
+      $("#chart3 .highcharts-series-group rect:nth-child(27)").css("fill", "#7fba00");
+    }
+    if (state == "NV") {
+      $("#chart3 .highcharts-series-group rect:nth-child(28)").css("fill", "#7fba00");
+    }
+    if (state == "Nation") {
+      $("#chart3 .highcharts-series-group rect:nth-child(29)").css("fill", "#7fba00");
+    }
+    if (state == "VA") {
+      $("#chart3 .highcharts-series-group rect:nth-child(30)").css("fill", "#7fba00");
+    }
+    if (state == "KS") {
+      $("#chart3 .highcharts-series-group rect:nth-child(31)").css("fill", "#7fba00");
+    }
+    if (state == "NY") {
+      $("#chart3 .highcharts-series-group rect:nth-child(32)").css("fill", "#7fba00");
+    }
+    if (state == "WI") {
+      $("#chart3 .highcharts-series-group rect:nth-child(33)").css("fill", "#7fba00");
+    }
+    if (state == "WA") {
+      $("#chart3 .highcharts-series-group rect:nth-child(34)").css("fill", "#7fba00");
+    }
+    if (state == "OR") {
+      $("#chart3 .highcharts-series-group rect:nth-child(35)").css("fill", "#7fba00");
+    }
+    if (state == "DC") {
+      $("#chart3 .highcharts-series-group rect:nth-child(36)").css("fill", "#7fba00");
+    }
+    if (state == "NJ") {
+      $("#chart3 .highcharts-series-group rect:nth-child(37)").css("fill", "#7fba00");
+    }
+    if (state == "NE") {
+      $("#chart3 .highcharts-series-group rect:nth-child(38)").css("fill", "#7fba00");
+    }
+    if (state == "MT") {
+      $("#chart3 .highcharts-series-group rect:nth-child(39)").css("fill", "#7fba00");
+    }
+    if (state == "SD") {
+      $("#chart3 .highcharts-series-group rect:nth-child(40)").css("fill", "#7fba00");
+    }
+    if (state == "ND") {
+      $("#chart3 .highcharts-series-group rect:nth-child(41)").css("fill", "#7fba00");
+    }
+    if (state == "MD") {
+      $("#chart3 .highcharts-series-group rect:nth-child(42)").css("fill", "#7fba00");
+    }
+    if (state == "TX") {
+      $("#chart3 .highcharts-series-group rect:nth-child(43)").css("fill", "#7fba00");
+    }
+    if (state == "MN") {
+      $("#chart3 .highcharts-series-group rect:nth-child(44)").css("fill", "#7fba00");
+    }
+    if (state == "AZ") {
+      $("#chart3 .highcharts-series-group rect:nth-child(45)").css("fill", "#7fba00");
+    }
+    if (state == "ID") {
+      $("#chart3 .highcharts-series-group rect:nth-child(46)").css("fill", "#7fba00");
+    }
+    if (state == "WY") {
+      $("#chart3 .highcharts-series-group rect:nth-child(47)").css("fill", "#7fba00");
+    }
+    if (state == "HI") {
+      $("#chart3 .highcharts-series-group rect:nth-child(48)").css("fill", "#7fba00");
+    }
+    if (state == "CA") {
+      $("#chart3 .highcharts-series-group rect:nth-child(49)").css("fill", "#7fba00");
+    }
+    if (state == "CO") {
+      $("#chart3 .highcharts-series-group rect:nth-child(50)").css("fill", "#7fba00");
+    }
+    if (state == "NM") {
+      $("#chart3 .highcharts-series-group rect:nth-child(51)").css("fill", "#7fba00");
+    }
+    if (state == "UT") {
+      $("#chart3 .highcharts-series-group rect:nth-child(52)").css("fill", "#7fba00");
+    }
+    //nationwide highlight
+    $("#chart3 .highcharts-series-group rect:nth-child(29)").css("fill", "#00a5db");
+
+
+  })
+  // var state = function(){
+  // }
+</script>
