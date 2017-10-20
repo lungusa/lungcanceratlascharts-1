@@ -1,12 +1,39 @@
+<link rel="stylesheet" href="http://www.lung.org/css/materialize.css" media="screen" title="no title" charset="utf-8">
 <style media="screen">
+<<<<<<< HEAD
+=======
+  div#intro p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .tableOfContents ul {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
   .highcharts-menu hr {
     margin: 0 !important;
   }
 
+<<<<<<< HEAD
+=======
+  /*bullet points adjustment = .box*/
+
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
   .box {
     /*border: 1px solid gray;
     padding: 30px;
     margin: 10px;*/
+<<<<<<< HEAD
+=======
+  }
+
+  .box li {
+    font-size: 15px;
+    line-height: 20px;
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
   }
 
   .change {
@@ -24,10 +51,17 @@
     text-align: center;
     justify-content: center;
     padding: 15px;
+<<<<<<< HEAD
     font-size: 15px !important;
   }
 
   #changeStateDiv{
+=======
+    font-size: 16px !important;
+  }
+
+  /*#changeStateDiv{
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
     text-align: center;
     margin: 10px
   }
@@ -47,24 +81,66 @@
   }
   #changeState:hover {
     background: #bad80a;
+<<<<<<< HEAD
   }
   .backToTop{
+=======
+  }*/
+
+  .backToTop {
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
     color: #3a75c4;
     cursor: pointer;
     margin: 10px;
   }
+<<<<<<< HEAD
   .backToTop:hover{
     color: #bad80a;
   }
   @media (max-width: 500px){
     #changeState{
+=======
+
+  .backToTop:hover {
+    color: #bad80a;
+  }
+
+  @media (max-width: 500px) {
+    div#intro p {
+      font-size: 16px;
+      line-height: 25px;
+    }
+    #changeState {
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
       font-size: 14px;
       height: 41px;
       width: 130px;
     }
+<<<<<<< HEAD
+=======
+    .box li {
+      font-size: 13px;
+      line-height: 17px;
+    }
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
   }
 </style>
+<div id="intro">
+  <p>
+    Nearly a quarter of a million American will be diagnosed with lung cancer this year, or one every two and a half minutes. It is the leading cancer killer in the United States, accounting for about one in four cancer deaths. The five-year survival rate
+    for lung cancer is only less than one in five (18.1%), much lower than those for many other common cancers. Less than half of those diagnosed with lung cancer will still be alive a year later. Lung cancer can be prevented, and new research has shown
+    that screening can catch more cases earlier and save lives.
+  </p>
+  <p>
+    However, the burden of lung cancer is not the same everywhere. Some states have much higher rates of new cases than others, or much lower survival rates. Treatment, exposure to risk factors, and access to screening facilities also varies from state to
+    state.
+  </p>
+  <p>
+    This report summarizes the available data on state-specific lung cancer burden. It provides policy makers, researchers, health care practitioners, and anyone committed to ending lung cancer with a one-stop resource for identifying where their state can
+    best focus its resources to decrease the burden of lung cancer.
+  </p>
 
+<<<<<<< HEAD
 <p>
   Nearly a quarter of a million American will be diagnosed with lung cancer this year, or one every two and a half minutes. It is the leading cancer killer in the United States, accounting for about one in four cancer deaths. The five-year survival rate
   for lung cancer is only less than one in five (18.1%), much lower than those for many other common cancers. Less than half of those diagnosed with lung cancer will still be alive a year later. Lung cancer can be prevented, and new research has shown
@@ -81,9 +157,95 @@
 <div id="changeStateDiv">
   <button id="changeState" type="button" name="button">Change State</button>
 </div>
+=======
+  <style media="screen">
+    #tocSelect {
+      font-family: 'lato', sans-serif;
+      font-size: 18px;
+      padding: 10px;
+      border-radius: 25px;
+      margin-bottom: 15px;
+    }
 
-<h2 class="change">Connecticut</h2>
+    .tocDiv {
+      border: 2px solid lightgray;
+      border-radius: 10px;
+      height: 25px;
+      width: 250px;
+      padding: 9px;
+      padding-bottom: 4px;
+      margin-left: 10px;
+      margin-top: 5px;
+      cursor: pointer;
+      color: #3a75c4;
+    }
 
+    .tocDiv:hover {
+      border: 2px solid #bad80a;
+    }
+  </style>
+  <div class="tableOfContents">
+
+    <select id="tocSelect" name="">
+      <option >Table of Contents</option>
+      <option id="preventionSel" value="#prevention">1. Prevention</option>
+      <option id="earlyDetectionSel" value="#earlyDetection">2. Early Detection</option>
+      <option id="numbersSel" value="#numbers">3. Lung Cancer by the Numbers</option>
+      <option id="ratesSel" value="#rates">4. Lung Cancer Rates</option>
+      <option id="surgicalTreatmentSel" value="#surgicalTreatment">5. Surgical Treatment</option>
+      <option id="summarySel" value="#summary">6. Summary</option>
+    </select>
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
+
+    <p>
+      Table of Contents
+    </p>
+    <div class="row">
+      <div class="col lg6">
+        <div class="prevention tocDiv">1. Prevention</div>
+        <div class="earlyDetection tocDiv">2. Early Detection</div>
+        <div class="numbers tocDiv">3. Lung Cancer by the Numbers</div>
+      </div>
+      <div class="col lg6">
+        <div class="rates tocDiv">4. Lung Cancer Rates</div>
+        <div class="surgicalTreatment tocDiv">5. Surgical Treatment</div>
+        <div class="summary tocDiv">6. Summary</div>
+      </div>
+    </div>
+
+<<<<<<< HEAD
+=======
+
+    <!-- <ul class="tocUL">
+      <li class="tocLI"><a id="prevention" href="#prevention">Prevention</a></li>
+      <li class="tocLI"><a id="earlyDetection" href="#earlyDetection">Early Detection</a></li>
+      <li class="tocLI"><a id="numbers" href="#numbers">Lung Cancer by the Numbers</a></li>
+      <li class="tocLI"><a id="rates" href="#rates">Lung Cancer Rates</a></li>
+      <li class="tocLI"><a id="surgicalTreatment" href="#surgicalTreatment">Surgical Treatment</a></li>
+      <li class="tocLI"><a id="summary" href="#summary">Summary</a></li>
+    </ul> -->
+    <script type="text/javascript">
+      $("#tocSelect").on("change", function() {
+        if($(this).val() !== ""){
+          window.location = $(this).val();
+        }
+      })
+
+      $(".tocDiv").on("click", function() {
+        var link = $(this).attr("class").split(" ")[0];
+        window.location = "#" + link;
+      })
+    </script>
+  </div>
+</div>
+
+<!-- <div id="changeStateDiv">
+  <button id="changeState" type="button" name="button">Change State</button>
+</div> -->
+
+<h2 class="change">Connecticut <span><a id="changeState" style="font-size: 14px; cursor: pointer;">(change)</a></span></h2>
+<a name="prevention"></a>
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
 <h4>Prevention</h4>
 <p>
   <strong>Tobacco</strong> use is the leading risk factor for lung cancer. Smoking and second-hand smoke have both been shown to cause lung cancer.
@@ -92,8 +254,8 @@
 <div class="box">
   <ul>
     <li>The smoking rate in <span class="change">Connecticut is 13.5%</span>, lower than the national average of 16.8%.</li>
-    <li>Each year the American Lung Association puts out The <a href="#">"State of Tobacco Control"</a> report. The 2017 report grades all fifty states and the federal government on four key tobacco control policies: tobacco control and prevention spending,
-      smokefree air, tobacco taxes, and cessation coverage. Connecticut&rsquo;s 2017 State of Tobacco Control report grade are:</li>
+    <li>Each year the American Lung Association puts out The <a href="http://www.lung.org/our-initiatives/tobacco/reports-resources/sotc/">"State of Tobacco Control"</a> report. The 2017 report grades all fifty states and the federal government on four key
+      tobacco control policies: tobacco control and prevention spending, smokefree air, tobacco taxes, and cessation coverage. Connecticut&rsquo;s 2017 State of Tobacco Control report grade are:</li>
   </ul>
   <div class="sotc">
     <!-- SOTC GRADES HERE -->
@@ -120,7 +282,7 @@
     <li class="change">22 counties in Connecticut are considered Zone 2 which means they have a predicted average indoor radon screening levels from 2 to 4 pCi/L</li>
   </ul>
   <p>
-    For more information on radon testing and removal, visit <a href="/preview!www.lung.org/radon">Lung.org/radon</a>
+    For more information on radon testing and removal, visit <a href="http://www.lung.org/radon">Lung.org/radon</a>
   </p>
 </div>
 
@@ -132,7 +294,11 @@
   <ul>
     <li>Each year the American Lung Association puts out the &ldquo;State of the Air 2017&rdquo; report. The 2017 report grades U.S. counties on harmful ozone (smog) and particle pollution recorded over a three-year period, and details trends for metropolitan
       areas over the past decade. The report ranks also both the cleanest and most polluted areas in the country.</li>
+<<<<<<< HEAD
     <li class="change"><a href="#">View the Connecticut report card</a></li>
+=======
+    <li class="change"><a href="http://www.lung.org/our-initiatives/healthy-air/sota/city-rankings/states/">View the Connecticut report card</a></li>
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
   </ul>
   <p>
     For more information about air pollution, visit <a href="/preview!www.lung.org/healthy-air">lung.org/healthy-air</a>
@@ -147,7 +313,11 @@
 
 
 <hr>
+<<<<<<< HEAD
 
+=======
+<a name="earlyDetection"></a>
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
 <h4>Early Detection</h4>
 <p>
   Lung cancer screening using low-dose CT scan is recommended for those who meet the high-risk criteria:
@@ -170,6 +340,10 @@
 
 
 <hr>
+<<<<<<< HEAD
+=======
+<a name="numbers"></a>
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
 <h4>Lung cancer by the numbers</h4>
 <div class="box" class="change">
   <p>
@@ -192,6 +366,10 @@
 </div>
 
 <hr>
+<<<<<<< HEAD
+=======
+<a name="rates"></a>
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
 <h4>Lung Cancer Rates</h4>
 <p>
   <strong>Incidence</strong>
@@ -208,7 +386,7 @@
 <div class="chart chart3">
   <div id="item-835159966" class="templateComponent" style="display: inline;"></div>
 </div>
-
+<hr>
 <p>
   <strong>5 year Survival Rate</strong>
 </p>
@@ -224,7 +402,7 @@
 <div class="chart chartFour">
   <div id="item-835182233" class="templateComponent" style="display: inline;"></div>
 </div>
-
+<hr>
 <p>
   <strong>Stage at diagnosis</strong>
 </p>
@@ -250,6 +428,10 @@
   </article>
 </div>
 <hr>
+<<<<<<< HEAD
+=======
+<a name="surgicalTreatment"></a>
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
 <h4>Surgical Treatment</h4>
 <p>
   Lung cancer can often be treated with surgery as part of the first course of treatment if it is at an early stage and has not spread outside of the lung and lymph nodes close to the lung. While surgery may not be an option for every patient, those who
@@ -274,6 +456,10 @@
 </div>
 
 <hr>
+<<<<<<< HEAD
+=======
+<a name="summary"></a>
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
 <h4>Summary</h4>
 <p>
   <span class="change">Despite having a below average smoking rate, Connecticut has a lung cancer incidence rate similar to average. However, the state also has more screening centers per population than average, which could contribute to having both the second best rate of surgery during the initial round of treatment and a better than average survival rate.</span>
@@ -303,16 +489,41 @@
     $("#location").click();
   })
 
+<<<<<<< HEAD
   $(".backToTop").on("click", function(){
+=======
+  $(".backToTop").on("click", function() {
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
     // $(document).scrollTop(80);
     var pos = $(window).scrollTop();
     // $(window).scrollTop(pos-400);
     // $("html, body").animate({ scrollTop: pos-700 }, 200);
+<<<<<<< HEAD
     $("html, body").animate({ scrollTop: pos-pos }, 200);
 
   })
 
   $(document).ready(function() {
+=======
+    $("html, body").animate({
+      scrollTop: pos - pos
+    }, 200);
+
+  })
+
+  // removes all legends except for 4 bar chart
+  var removeLegends = function() {
+    var chartLegends = $(".highcharts-legend");
+    for (var i = 0; i < chartLegends.length; i++) {
+      if (i != 4) {
+        $(chartLegends[i]).remove();
+      }
+    }
+  }
+
+  $(document).ready(function() {
+    setTimeout(removeLegends, 750);
+>>>>>>> ea7b25a5ad7e5ac9dbdedc99cd23d6a9f2466a0d
     // chart menu blue;
     // $("#chart .highcharts-button rect").attr("fill", "#3a75c4");
     // $("#chart2 .highcharts-button rect").attr("fill", "#3a75c4");
