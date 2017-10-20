@@ -137,7 +137,7 @@
   <div class="tableOfContents">
 
     <select id="tocSelect" name="">
-      <option >Table of Contents</option>
+      <option value="">Table of Contents</option>
       <option id="preventionSel" value="#prevention">1. Prevention</option>
       <option id="earlyDetectionSel" value="#earlyDetection">2. Early Detection</option>
       <option id="numbersSel" value="#numbers">3. Lung Cancer by the Numbers</option>
@@ -146,7 +146,7 @@
       <option id="summarySel" value="#summary">6. Summary</option>
     </select>
 
-    <p>
+    <!-- <p>
       Table of Contents
     </p>
     <div class="row">
@@ -160,7 +160,7 @@
         <div class="surgicalTreatment tocDiv">5. Surgical Treatment</div>
         <div class="summary tocDiv">6. Summary</div>
       </div>
-    </div>
+    </div> -->
 
 
     <!-- <ul class="tocUL">
@@ -178,10 +178,10 @@
         }
       })
 
-      $(".tocDiv").on("click", function() {
-        var link = $(this).attr("class").split(" ")[0];
-        window.location = "#" + link;
-      })
+      // $(".tocDiv").on("click", function() {
+      //   var link = $(this).attr("class").split(" ")[0];
+      //   window.location = "#" + link;
+      // })
     </script>
   </div>
 </div>
