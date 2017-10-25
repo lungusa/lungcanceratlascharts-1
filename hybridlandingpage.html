@@ -1,0 +1,46 @@
+<div id="allCharts" style="display: none">
+  <div id="firstChart">
+    <div id="item-838334242" class="templateComponent" style="display: inline;"></div>
+  </div>
+  <div id="secondChart">
+    <div id="item-838334336" class="templateComponent" style="display: inline;"></div>
+  </div>
+  <div id="thirdChart">
+    <div id="item-838334382" class="templateComponent" style="display: inline;"></div>
+  </div>
+  <div id="fourthChart">
+    <div id="item-838334399" class="templateComponent" style="display: inline;">
+    </div>
+    <div id="fifthChart">
+      <div id="item-838334467" class="templateComponent" style="display: inline;"></div>
+    </div>
+    <div id="sixthChart">
+      <div id="item-838334572" class="templateComponent" style="display: inline;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var chartMove = function() {
+    // saving all loaded chart DOM elements into variables
+    var firstChart = document.getElementById("firstChart");
+    var secondChart = document.getElementById("secondChart");
+    var thirdChart = document.getElementById("thirdChart");
+    var fourthChart = document.getElementById("fourthChart");
+    var fifthChart = document.getElementById("fifthChart");
+    var sixthChart = document.getElementById("sixthChart");
+    // appending those variables to the divs in the state content by their classname
+    $(".chart1").append(firstChart);
+    $(".chart2").append(secondChart);
+    $(".chart3").append(thirdChart);
+    $(".chartFour").append(fourthChart);
+    $(".chart5").append(fifthChart);
+    $(".chart6").append(sixthChart);
+    $("#allCharts").remove();
+  };
+
+  $(document).ready(function() {
+    // wait for hybrid content to load, then append
+    setTimeout(chartMove, 1000);
+  })
+</script>

@@ -92,7 +92,7 @@
   </p>
 
   <div class="tableOfContents">
-    <select id="tocSelect">
+    <select id="tocSelect" onchange="if ($(this).val() !== '') {window.location = $(this).val();}">
       <option value="">Table of Contents</option>
       <option id="preventionSel" value="#prevention">1. Prevention</option>
       <option id="earlyDetectionSel" value="#earlyDetection">2. Early Detection</option>
@@ -108,7 +108,7 @@
   <button id="changeState" type="button" name="button">Change State</button>
 </div> -->
 
-<h2 class="change">Connecticut <span><a id="changeState" style="font-size: 14px; cursor: pointer;">(change)</a></span></h2>
+<h2 class="change">Connecticut <span><a id="changeState" style="font-size: 14px; cursor: pointer;" onclick="$('#location').click();">(change)</a></span></h2>
 <a name="prevention"></a>
 <h4>Prevention</h4>
 <p>
@@ -174,7 +174,7 @@
   </div>
 </div>
 
-<div class="backToTop">
+<div class="backToTop" onclick="var pos = $(window).scrollTop(); $('html, body').animate({ scrollTop: pos - pos}, 200);" onclick="var pos = $(window).scrollTop(); $('html, body').animate({ scrollTop: pos - pos}, 200);">
   <article class="">
     <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
   </article>
@@ -199,7 +199,7 @@
 </p>
 
 
-<div class="backToTop">
+<div class="backToTop" onclick="var pos = $(window).scrollTop(); $('html, body').animate({ scrollTop: pos - pos}, 200);">
   <article class="">
     <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
   </article>
@@ -223,7 +223,7 @@
   <!-- <div id="item-834347790" class="templateComponent" style="display: inline;"></div> -->
 </div>
 
-<div class="backToTop">
+<div class="backToTop" onclick="var pos = $(window).scrollTop(); $('html, body').animate({ scrollTop: pos - pos}, 200);" onclick="var pos = $(window).scrollTop(); $('html, body').animate({ scrollTop: pos - pos}, 200);">
   <article class="">
     <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
   </article>
@@ -283,7 +283,7 @@
   <!-- <div id="item-835201207" class="templateComponent" style="display: inline;"></div> -->
 </div>
 
-<div class="backToTop">
+<div class="backToTop" onclick="var pos = $(window).scrollTop(); $('html, body').animate({ scrollTop: pos - pos}, 200);" onclick="var pos = $(window).scrollTop(); $('html, body').animate({ scrollTop: pos - pos}, 200);">
   <article class="">
     <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
   </article>
@@ -307,7 +307,7 @@
   <!-- <div id="item-835201275" class="templateComponent" style="display: inline;"></div> -->
 
 </div>
-<div class="backToTop">
+<div class="backToTop" onclick="var pos = $(window).scrollTop(); $('html, body').animate({ scrollTop: pos - pos}, 200);" onclick="var pos = $(window).scrollTop(); $('html, body').animate({ scrollTop: pos - pos}, 200);">
   <article class="">
     <i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Back to Top
   </article>
@@ -340,10 +340,6 @@
 </p>
 
 <script type="text/javascript">
-$(document).ready(function() {
-  console.log("loading from CT hybrid page");
-  setTimeout(removeLegends, 750);
-})
   $("#changeState").on("click", function() {
     console.log("hey");
     $("#location").click();
@@ -372,4 +368,8 @@ $(document).ready(function() {
     }
   }
 
+  $(document).ready(function() {
+    console.log("loading from CT hybrid page");
+    setTimeout(removeLegends, 750);
+  })
 </script>
