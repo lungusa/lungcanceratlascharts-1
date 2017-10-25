@@ -21,6 +21,16 @@
 </div>
 
 <script>
+  // removes all legends except for 4 bar chart
+  var removeLegends = function() {
+    var chartLegends = $(".highcharts-legend");
+    for (var i = 0; i < chartLegends.length; i++) {
+      if (i != 4) {
+        $(chartLegends[i]).remove();
+      }
+    }
+  }
+
   // saving all loaded chart DOM elements into variables
   var firstChart = document.getElementById("firstChart");
   var secondChart = document.getElementById("secondChart");
@@ -43,13 +53,16 @@
   $(document).ready(function() {
     // wait for hybrid content to load, then append
     setTimeout(chartMove, 1000);
+    setTimeout(removeLegends, 1100);
   })
 
   $("#stateSelectList").on("change", function() {
     setTimeout(chartMove, 1000);
+    setTimeout(removeLegends, 1100);
   })
   $("[name='searchZip']").on("submit", function() {
     setTimeout(chartMove, 1000);
+    setTimeout(removeLegends, 1100);
   })
 
 </script>
