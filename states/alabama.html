@@ -1,3 +1,6 @@
+<script type="text/javascript">
+  setState("AL");
+</script>
 <link rel="stylesheet" href="http://www.lung.org/css/materialize.css" media="screen" title="no title" charset="utf-8">
 <!-- EMBEDDED STYLES COMPONENT -->
 <div id="item-838338989" class="templateComponent" style="display: inline;"></div>
@@ -34,7 +37,7 @@
   <button id="changeState" type="button" name="button">Change State</button>
 </div> -->
 
-<h2 class="change">Alabama<span><a id="changeState" style="font-size: 14px; cursor: pointer;" onclick="$('#location').click();">(change)</a></span></h2>
+<h2 class="change">Alabama <span><a id="changeState" style="font-size: 14px; cursor: pointer;" onclick="$('#location').click();">(change)</a></span></h2>
 <a name="prevention"></a>
 <h4>Prevention</h4>
 <p>
@@ -265,37 +268,5 @@
   Maintaining a high number of quality, accredited screening centers will help ensure that both as many patients undergo surgery during their initial round of treatment and as high a survival rate as possible.
 </p>
 
-<script type="text/javascript">
-  $("#changeState").on("click", function() {
-    console.log("hey");
-    $("#location").click();
-  });
-
-  $(".backToTop").on("click", function() {
-    var pos = $(window).scrollTop();
-    $("html, body").animate({
-      scrollTop: pos - pos
-    }, 200);
-  });
-
-  $("#tocSelect").on("change", function() {
-    if ($(this).val() !== "") {
-      window.location = $(this).val();
-    }
-  });
-
-  // removes all legends except for 4 bar chart
-  var removeLegends = function() {
-    var chartLegends = $(".highcharts-legend");
-    for (var i = 0; i < chartLegends.length; i++) {
-      if (i != 4) {
-        $(chartLegends[i]).remove();
-      }
-    }
-  }
-
-  $(document).ready(function() {
-    console.log("loading from CT hybrid page");
-    setTimeout(removeLegends, 750);
-  })
-</script>
+<!-- atlas scripts -->
+<div id="item-838585410" class="templateComponent" style="display: inline;"></div>
