@@ -67,7 +67,8 @@
         }
       },
       legend: {
-        reversed: true
+        reversed: true,
+        enabled: false
       },
       plotOptions: {
         series: {
@@ -96,7 +97,7 @@
     $("#chart3 .highcharts-legend-item rect").css("fill", "#3a75c4");
 
 
-    
+
     var state = Cookies.get('state');
     // bar on graph changes to green based on state selection
     if (state == "KY") {
