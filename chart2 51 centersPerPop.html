@@ -49,15 +49,161 @@
   // console.log("state achieved for chart 2");
   // bar on graph changes to green based on state selection
   if (state == "DE") {
-    var slot = 0;
+    var slot2 = 0;
   }
   if (state == "RI") {
-    var slot = 1;
+    var slot2 = 1;
+  }
+  if (state == "CT") {
+    var slot2 = 2;
+  }
+  if (state == "NJ") {
+    var slot2 = 3;
+  }
+  if (state == "NH") {
+    var slot2 = 4;
+  }
+  if (state == "PA") {
+    var slot2 = 5;
+  }
+  if (state == "KY") {
+    var slot2 = 6;
+  }
+  if (state == "MA") {
+    var slot2 = 7;
+  }
+  if (state == "VT") {
+    var slot2 = 8;
+  }
+  if (state == "NY") {
+    var slot2 = 9;
+  }
+  if (state == "WV") {
+    var slot2 = 10;
+  }
+  if (state == "IN") {
+    var slot2 = 11;
+  }
+  if (state == "MD") {
+    var slot2 = 12;
+  }
+  if (state == "NC") {
+    var slot2 = 13;
+  }
+  if (state == "CO") {
+    var slot2 = 14;
+  }
+  if (state == "VA") {
+    var slot2 = 15;
+  }
+  if (state == "ID") {
+    var slot2 = 16;
+  }
+  if (state == "MI") {
+    var slot2 = 17;
+  }
+  if (state == "NV") {
+    var slot2 = 18;
+  }
+  if (state == "SC") {
+    var slot2 = 19;
+  }
+  if (state == "Nation") {
+    var slot2 = 20;
+  }
+  if (state == "FL") {
+    var slot2 = 21;
+  }
+  if (state == "AL") {
+    var slot2 = 22;
+  }
+  if (state == "ME") {
+    var slot2 = 23;
+  }
+  if (state == "IA") {
+    var slot2 = 24;
+  }
+  if (state == "DC") {
+    var slot2 = 25;
+  }
+  if (state == "MO") {
+    var slot2 = 26;
+  }
+  if (state == "TN") {
+    var slot2 = 27;
   }
   if (state == "AK") {
-    var slot = 28;
+    var slot2 = 28;
   }
-
+  if (state == "MS") {
+    var slot2 = 29;
+  }
+  if (state == "WA") {
+    var slot2 = 30;
+  }
+  if (state == "LA") {
+    var slot2 = 31;
+  }
+  if (state == "GA") {
+    var slot2 = 32;
+  }
+  if (state == "TX") {
+    var slot2 = 33;
+  }
+  if (state == "OR") {
+    var slot2 = 34;
+  }
+  if (state == "MN") {
+    var slot2 = 35;
+  }
+  if (state == "OH") {
+    var slot2 = 36;
+  }
+  if (state == "IL") {
+    var slot2 = 37;
+  }
+  if (state == "AR") {
+    var slot2 = 38;
+  }
+  if (state == "AZ") {
+    var slot2 = 39;
+  }
+  if (state == "NE") {
+    var slot2 = 40;
+  }
+  if (state == "WI") {
+    var slot2 = 41;
+  }
+  if (state == "HI") {
+    var slot2 = 42;
+  }
+  if (state == "KS") {
+    var slot2 = 43;
+  }
+  if (state == "ND") {
+    var slot2 = 44;
+  }
+  if (state == "CA") {
+    var slot2 = 45;
+  }
+  if (state == "MT") {
+    var slot2 = 46;
+  }
+  if (state == "NM") {
+    var slot2 = 47;
+  }
+  if (state == "OK") {
+    var slot2 = 48;
+  }
+  if (state == "WY") {
+    var slot2 = 49;
+  }
+  if (state == "SD") {
+    var slot2 = 50;
+  }
+  if (state == "UT") {
+    var slot2 = 51;
+  }
 
   var chart2 = function() {
     Highcharts.setOptions({
@@ -67,7 +213,7 @@
       chart: {
         events: {
           load: function(){
-            var stateBox = this.series[0].points[slot];
+            var stateBox = this.series[0].points[slot2];
             this.tooltip.refresh(stateBox);
           }
         },
@@ -206,7 +352,6 @@
         0.7]
       }],
       dataLabels: {
-
         style: {
           fontFamily: "'Lato', sans-serif"
         }

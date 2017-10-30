@@ -3,11 +3,11 @@
 
 <style media="screen">
   #chart3 {
-    min-width: 310px;
+    /*min-width: 310px;*/
     width: 100%;
     /*height must be a minimum of 860px*/
-    min-height: 860px;
-    height: 1000px;
+    /*min-height: 860px;*/
+    /*height: 1000px;*/
     margin: 0 auto;
   }
 
@@ -37,7 +37,7 @@
 
   @media (max-width: 700px) {
     #chart3 {
-      height: 1000px;
+      /*height: 1000px;*/
     }
   }
 </style>
@@ -46,19 +46,191 @@
 <div id="chart3"></div>
 
 <script>
+  var state = Cookies.get('state');
+  // console.log("state achieved for chart 3");
+  // bar on graph changes to green based on state selection
+  if (state == "KY") {
+    var slot3 = 51;
+  }
+  if (state == "WV") {
+    var slot3 = 50;
+  }
+  if (state == "AR") {
+    var slot3 = 49;
+  }
+  if (state == "TN") {
+    var slot3 = 48;
+  }
+  if (state == "MS") {
+    var slot3 = 47;
+  }
+  if (state == "MO") {
+    var slot3 = 46;
+  }
+  if (state == "ME") {
+    var slot3 = 45;
+  }
+  if (state == "IN") {
+    var slot3 = 44;
+  }
+  if (state == "LA") {
+    var slot3 = 43;
+  }
+  if (state == "DE") {
+    var slot3 = 42;
+  }
+  if (state == "AL") {
+    var slot3 = 41;
+  }
+  if (state == "OK") {
+    var slot3 = 40;
+  }
+  if (state == "OH") {
+    var slot3 = 39;
+  }
+  if (state == "NC") {
+    var slot3 = 38;
+  }
+  if (state == "RI") {
+    var slot3 = 37;
+  }
+  if (state == "SC") {
+    var slot3 = 36;
+  }
+  if (state == "IL") {
+    var slot3 = 35;
+  }
+  if (state == "NH") {
+    var slot3 = 34;
+  }
+  if (state == "MI") {
+    var slot3 = 33;
+  }
+  if (state == "GA") {
+    var slot3 = 32;
+  }
+  if (state == "PA") {
+    var slot3 = 31;
+  }
+  if (state == "VT") {
+    var slot3 = 30;
+  }
+  if (state == "MA") {
+    var slot3 = 29;
+  }
+  if (state == "IA") {
+    var slot3 = 28;
+  }
+  if (state == "CT") {
+    var slot3 = 27;
+  }
+  if (state == "FL") {
+    var slot3 = 26;
+  }
+  if (state == "AK") {
+    var slot3 = 25;
+  }
+  if (state == "NV") {
+    var slot3 = 24;
+  }
+  if (state == "Nation") {
+    var slot3 = 23;
+  }
+  if (state == "VA") {
+    var slot3 = 22;
+  }
+  if (state == "KS") {
+    var slot3 = 21;
+  }
+  if (state == "NY") {
+    var slot3 = 20;
+  }
+  if (state == "WI") {
+    var slot3 = 19;
+  }
+  if (state == "WA") {
+    var slot3 = 18;
+  }
+  if (state == "OR") {
+    var slot3 = 17;
+  }
+  if (state == "DC") {
+    var slot3 = 16;
+  }
+  if (state == "NJ") {
+    var slot3 = 15;
+  }
+  if (state == "NE") {
+    var slot3 = 14;
+  }
+  if (state == "MT") {
+    var slot3 = 13;
+  }
+  if (state == "SD") {
+    var slot3 = 12;
+  }
+  if (state == "ND") {
+    var slot3 = 11;
+  }
+  if (state == "MD") {
+    var slot3 = 10;
+  }
+  if (state == "TX") {
+    var slot3 = 9;
+  }
+  if (state == "MN") {
+    var slot3 = 8;
+  }
+  if (state == "AZ") {
+    var slot3 = 7;
+  }
+  if (state == "ID") {
+    var slot3 = 6;
+  }
+  if (state == "WY") {
+    var slot3 = 5;
+  }
+  if (state == "HI") {
+    var slot3 = 4;
+  }
+  if (state == "CA") {
+    var slot3 = 3;
+  }
+  if (state == "CO") {
+    var slot3 = 2;
+  }
+  if (state == "NM") {
+    var slot3 = 1;
+  }
+  if (state == "UT") {
+    var slot3 = 0;
+  }
+
+  var slot3 = parseInt(slot3);
+  console.log(slot3);
+
   var chart3 = function() {
     Highcharts.setOptions({
       colors: ["#3a75c4", "#7fba00"]
     })
-
     Highcharts.chart("chart3", {
       chart: {
-        type: "bar"
+        events: {
+          load: function(){
+            var stateBox = this.series[0].points[slot3];
+            this.tooltip.refresh(stateBox);
+          }
+        },
+        type: "column",
+        height: 500
       },
       title: {
         text: "State Ranking by Incidence Rate"
       },
       xAxis: {
+        labels: {
+          enabled: false
+        },
         categories: ["Utah", "New Mexico", "Colorado", "California", "Hawaii", "Wyoming", "Idaho", "Arizona", "Minnesota", "Texas", "Maryland", "North Dakota", "South Dakota", "Montana", "Nebraska", "New Jersey", "District of Columbia",
           "Oregon", "Washington", "Wisconsin", "New York", "Kansas", "Virginia", "Nation", "Nevada", "Alaska", "Florida", "Connecticut", "Iowa", "Massachusetts", "Vermont", "Pennsylvania", "Georgia", "Michigan", "New Hampshire", "Illinois",
           "South Carolina", "Rhode Island", "North Carolina", "Ohio", "Oklahoma", "Alabama", "Delaware", "Louisiana", "Indiana", "Maine", "Missouri", "Mississippi", "Tennessee", "Arkansas", "West Virginia", "Kentucky"
@@ -81,8 +253,59 @@
       },
       series: [{
         name: "States",
-        data: [29.1, 42.7, 45.8, 46.8, 47.5, 47.8, 51.4, 52.1, 55.5, 56.4, 57.2, 57.4, 58.2, 58.7, 59.1, 59.4, 59.6, 59.6, 60.4, 61.5, 62.2, 62.2, 62.4, 63, 63.1, 63.2, 63.3, 63.5, 65.1, 66.5, 66.7, 66.7, 67.7, 68, 68.1, 68.3, 69.1, 70,
-          70.9, 71.1, 71.6, 71.7, 71.8, 71.8, 74.5, 74.9, 76.2, 76.8, 77.2, 77.5, 81.6, 96.8
+        data: [
+          29.1,
+          42.7,
+          45.8,
+          46.8,
+          47.5,
+          47.8,
+          51.4,
+          52.1,
+          55.5,
+          56.4,
+          57.2,
+          57.4,
+          58.2,
+          58.7,
+          59.1,
+          59.4,
+          59.6,
+          59.6,
+          60.4,
+          61.5,
+          62.2,
+          62.2,
+          62.4,
+          63,
+          63.1,
+          63.2,
+          63.3,
+          63.5,
+          65.1,
+          66.5,
+          66.7,
+          66.7,
+          67.7,
+          68,
+          68.1,
+          68.3,
+          69.1,
+          70,
+          70.9,
+          71.1,
+          71.6,
+          71.7,
+          71.8,
+          71.8,
+          74.5,
+          74.9,
+          76.2,
+          76.8,
+          77.2,
+          77.5,
+          81.6,
+          96.8
         ]
       }],
       dataLabels: {
@@ -97,12 +320,11 @@
 
   $(document).ready(function() {
     chart3();
-    $("#chart3 .highcharts-color-0").css("fill", "#3a75c4");
-    $("#chart3 .highcharts-legend-item rect").css("fill", "#3a75c4");
+    // $("#chart3 .highcharts-color-0").css("fill", "#3a75c4");
+    // $("#chart3 .highcharts-legend-item rect").css("fill", "#3a75c4");
 
 
-
-    var state = Cookies.get('state');
+    var state = Cookies.get("state");
     // bar on graph changes to green based on state selection
     if (state == "KY") {
       $("#chart3 .highcharts-series-group rect:nth-child(52)").css("fill", "#ed1b2d");
