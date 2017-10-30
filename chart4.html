@@ -6,8 +6,8 @@
     min-width: 310px;
     width: 100%;
     /*height must be a minimum of 860px*/
-    min-height: 860px;
-    height: 1000px;
+    /*min-height: 860px;*/
+    /*height: 1000px;*/
     margin: 0 auto;
   }
 
@@ -37,7 +37,7 @@
 
   @media (max-width: 700px) {
     #chart4 {
-      height: 1000px;
+      /*height: 1000px;*/
     }
   }
 </style>
@@ -46,19 +46,100 @@
 <div id="chart4"></div>
 
 <script>
+  var state = Cookies.get('state');
+  // bar on graph changes to green based on state selection
+  if (state == "NY") {
+    var slot4 = 0
+  } else if (state == "CT") {
+    var slot4 = 1;
+  } else if (state == "NH") {
+    var slot4 = 2;
+  } else if (state == "NJ") {
+    var slot4 = 3;
+  } else if (state == "RI") {
+    var slot4 = 4;
+  } else if (state == "CO") {
+    var slot4 = 5;
+  } else if (state == "IL") {
+    var slot4 = 6;
+  } else if (state == "ND") {
+    var slot4 = 7;
+  } else if (state == "PA") {
+    var slot4 = 8;
+  } else if (state == "CA") {
+    var slot4 = 9;
+  } else if (state == "ME") {
+    var slot4 = 10;
+  } else if (state == "Nation") {
+    var slot4 = 11;
+  } else if (state == "AZ") {
+    var slot4 = 12;
+  } else if (state == "MT") {
+    var slot4 = 13;
+  } else if (state == "WI") {
+    var slot4 = 14;
+  } else if (state == "NE") {
+    var slot4 = 15;
+  } else if (state == "UT") {
+    var slot4 = 16;
+  } else if (state == "NC") {
+    var slot4 = 17;
+  } else if (state == "WY") {
+    var slot4 = 18;
+  } else if (state == "TX") {
+    var slot4 = 19;
+  } else if (state == "HI") {
+    var slot4 = 20;
+  } else if (state == "ID") {
+    var slot4 = 21;
+  } else if (state == "AK") {
+    var slot4 = 22;
+  } else if (state == "GA") {
+    var slot4 = 23;
+  } else if (state == "SC") {
+    var slot4 = 24;
+  } else if (state == "IA") {
+    var slot4 = 25;
+  } else if (state == "NM") {
+    var slot4 = 26;
+  } else if (state == "WV") {
+    var slot4 = 27;
+  } else if (state == "KY") {
+    var slot4 = 28;
+  } else if (state == "MI") {
+    var slot4 = 29;
+  } else if (state == "AL") {
+    var slot4 = 30;
+  } else if (state == "LA") {
+    var slot4 = 31;
+  } else {
+    var slot4 = 11;
+  }
+
   var chart4 = function() {
     Highcharts.setOptions({
       colors: ["#3a75c4", "#7fba00"]
     })
 
+
     Highcharts.chart("chart4", {
       chart: {
-        type: "bar"
+        events: {
+          load: function() {
+            var stateBox = this.series[0].points[slot4];
+            this.tooltip.refresh(stateBox);
+          }
+        },
+        type: "column",
+        height: 500
       },
       title: {
         text: "State Ranking by Centers Per Million People"
       },
       xAxis: {
+        labels: {
+          enabled: false
+        },
         categories: [
           "New York",
           "Connecticut",
@@ -92,7 +173,6 @@
           "Mississippi",
           "Alabama",
           "Louisiana"
-
         ]
       },
       yAxis: {
@@ -109,6 +189,9 @@
         series: {
           stacking: "normal"
         }
+      },
+      credits: {
+        enabled: false
       },
       series: [{
         name: "States",
@@ -262,7 +345,6 @@
     }
     //nationwide highlight
     $("#chart4 .highcharts-series-group rect:nth-child(12)").css("fill", "#7fba00");
-
 
   })
   // var state = function(){
