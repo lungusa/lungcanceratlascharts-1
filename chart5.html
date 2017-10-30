@@ -55,7 +55,7 @@
   }
 </style>
 
-<div id="chart5" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="chart5" style="min-width: 310px; margin: 0 auto"></div>
 
 <table id="datatable">
   <thead>
@@ -306,6 +306,9 @@
 
 
 
+  Highcharts.setOptions({
+    colors: ["#3a75c4", "#7fba00"]
+  })
 
   // create instance of chart
   Highcharts.chart('chart5', {
