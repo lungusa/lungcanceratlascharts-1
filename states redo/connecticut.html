@@ -24,12 +24,17 @@
   <div class="tableOfContents">
     <select id="tocSelect" onchange="if ($(this).val() !== '') {window.location = $(this).val();}">
       <option value="">Table of Contents</option>
-      <option id="preventionSel" value="#prevention">1. Prevention</option>
-      <option id="earlyDetectionSel" value="#earlyDetection">2. Early Detection</option>
-      <option id="numbersSel" value="#numbers">3. Lung Cancer by the Numbers</option>
-      <option id="ratesSel" value="#rates">4. Lung Cancer Rates</option>
-      <option id="surgicalTreatmentSel" value="#surgicalTreatment">5. Surgical Treatment</option>
-      <option id="summarySel" value="#summary">6. Summary</option>
+      <option id="ratesSel" value="#rates">1. Lung Cancer Rates</option>
+        <!-- <option id="incidenceSel" value="#incidence">&nbsp;&nbsp;a. Incidence</option>
+        <option id="fiveYearSel" value="#fiveYear">&nbsp;&nbsp;b. Five Year Survival Rate</option>
+        <option id="stageAtDiagnosisSel" value="#stageAtDiagnosis">&nbsp;&nbsp;c. Stage at Diagnosis</option>
+        <option id="surgicalTreatmentSel" value="#surgicalTreatment">&nbsp;&nbsp;d. Surgical Treatment</option> -->
+      <option id="preventionSel" value="#prevention">2. Prevention</option>
+        <!-- <option id="screeningSel" value="#screening">&nbsp;&nbsp;a. Screening</option>
+        <option id="tobaccoSel" value="#tobacco">&nbsp;&nbsp;b. Tobacco</option>
+        <option id="radonSel" value="#radon">&nbsp;&nbsp;c. Radon</option>
+        <option id="airPollutionSel" value="#airPollution">&nbsp;&nbsp;d. Air Pollution</option> -->
+      <option id="summarySel" value="#summary">3. Summary</option>
     </select>
   </div>
 </div>
@@ -102,7 +107,7 @@
 </div>
 
 <hr>
-<a name="surgicalTreatment"></a>
+<!-- <a name="surgicalTreatment"></a> -->
 <h4>Surgical Treatment</h4>
 <p>
   Lung cancer can often be treated with surgery as part of the first course of treatment if it is at an early stage and has not spread outside of the lung and lymph nodes close to the lung. While surgery may not be an option for every patient, those who
@@ -235,7 +240,7 @@
       <p>
         Learn more about the <a href="#">other risk factors</a> for lung cancer and <a href="#">how you can reduce your risk</a>
       </p>
-      <h2 style="color: red;">
+      <h2 style="color: red !important;">
         NO LINKS PROVIDED
       </h2>
     </div>
