@@ -136,6 +136,11 @@
       title: {
         text: "State Ranking by Centers Per Million People"
       },
+      tooltip: {
+        formatter: function(){
+          return '<b>' + this.x + '</b>: ' + this.y
+        }
+      },
       xAxis: {
         labels: {
           enabled: false

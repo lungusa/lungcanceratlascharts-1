@@ -82,6 +82,11 @@
       legend: {
         enabled: false
       },
+      tooltip: {
+        formatter: function(){
+          return '<b>Lung cancer Indcidence</b>: ' + this.x + '<br><b>Adult Smoking</b>: ' + this.y
+        }
+      },
       title: {
         text: 'Relationship between Adult Smoking and Lung Cancer Incidence Rate by State'
       },

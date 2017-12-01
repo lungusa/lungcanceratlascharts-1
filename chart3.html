@@ -263,7 +263,13 @@
         style: {
           fontFamily: "'Lato', sans-serif"
         }
+      },
+      tooltip: {
+        formatter: function(){
+          return '<b>' + this.x + '</b>: ' + this.y
+        }
       }
+
     });
     // hide credits
     // $(".highcharts-credits").html("");

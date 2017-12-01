@@ -169,6 +169,11 @@
       title: {
         text: "State Ranking by Percent of Cases Treated with Surgery"
       },
+      tooltip: {
+        formatter: function(){
+          return '<b>' + this.x + '</b>: ' + this.y
+        }
+      },
       legend: {
         enabled: false
       },
