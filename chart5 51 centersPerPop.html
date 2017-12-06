@@ -1,0 +1,493 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<style media="screen">
+  #chart2 {
+    min-width: 310px;
+    width: 100%;
+    /*height must be a minimum of 860px*/
+    /*min-height: 860px;*/
+    /*height: 1000px;*/
+    margin: 0 auto;
+  }
+
+  .highcharts-background {
+    fill: transparent;
+  }
+
+  /*body{
+    background: url("https://images.unsplash.com/photo-1463780324318-d1a8ddc05a11") no-repeat center center fixed;
+  }*/
+
+  .highcharts-title {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  .highcharts-legend {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  .highcharts-axis-labels {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  .highcharts-xaxis-labels {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  @media (max-width: 700px) {
+    #chart2 {
+      /*height: 1000px;*/
+    }
+  }
+</style>
+
+<!-- 860px min height before font gets messed up -->
+<div id="chart2"></div>
+
+<script>
+  var state = Cookies.get('state');
+  // console.log("state achieved for chart 2");
+  // bar on graph changes to green based on state selection
+  if (state == "DE") {
+    var slot2 = 0;
+  } else if (state == "RI") {
+    var slot2 = 1;
+  } else if (state == "CT") {
+    var slot2 = 2;
+  } else if (state == "NJ") {
+    var slot2 = 3;
+  } else if (state == "NH") {
+    var slot2 = 4;
+  } else if (state == "PA") {
+    var slot2 = 5;
+  } else if (state == "KY") {
+    var slot2 = 6;
+  } else if (state == "MA") {
+    var slot2 = 7;
+  } else if (state == "VT") {
+    var slot2 = 8;
+  } else if (state == "NY") {
+    var slot2 = 9;
+  } else if (state == "WV") {
+    var slot2 = 10;
+  } else if (state == "IN") {
+    var slot2 = 11;
+  } else if (state == "MD") {
+    var slot2 = 12;
+  } else if (state == "NC") {
+    var slot2 = 13;
+  } else if (state == "CO") {
+    var slot2 = 14;
+  } else if (state == "VA") {
+    var slot2 = 15;
+  } else if (state == "ID") {
+    var slot2 = 16;
+  } else if (state == "MI") {
+    var slot2 = 17;
+  } else if (state == "NV") {
+    var slot2 = 18;
+  } else if (state == "SC") {
+    var slot2 = 19;
+  } else if (state == "Nation") {
+    var slot2 = 20;
+  } else if (state == "FL") {
+    var slot2 = 21;
+  } else if (state == "AL") {
+    var slot2 = 22;
+  } else if (state == "ME") {
+    var slot2 = 23;
+  } else if (state == "IA") {
+    var slot2 = 24;
+  } else if (state == "DC") {
+    var slot2 = 25;
+  } else if (state == "MO") {
+    var slot2 = 26;
+  } else if (state == "TN") {
+    var slot2 = 27;
+  } else if (state == "AK") {
+    var slot2 = 28;
+  } else if (state == "MS") {
+    var slot2 = 29;
+  } else if (state == "WA") {
+    var slot2 = 30;
+  } else if (state == "LA") {
+    var slot2 = 31;
+  } else if (state == "GA") {
+    var slot2 = 32;
+  } else if (state == "TX") {
+    var slot2 = 33;
+  } else if (state == "OR") {
+    var slot2 = 34;
+  } else if (state == "MN") {
+    var slot2 = 35;
+  } else if (state == "OH") {
+    var slot2 = 36;
+  } else if (state == "IL") {
+    var slot2 = 37;
+  } else if (state == "AR") {
+    var slot2 = 38;
+  } else if (state == "AZ") {
+    var slot2 = 39;
+  } else if (state == "NE") {
+    var slot2 = 40;
+  } else if (state == "WI") {
+    var slot2 = 41;
+  } else if (state == "HI") {
+    var slot2 = 42;
+  } else if (state == "KS") {
+    var slot2 = 43;
+  } else if (state == "ND") {
+    var slot2 = 44;
+  } else if (state == "CA") {
+    var slot2 = 45;
+  } else if (state == "MT") {
+    var slot2 = 46;
+  } else if (state == "NM") {
+    var slot2 = 47;
+  } else if (state == "OK") {
+    var slot2 = 48;
+  } else if (state == "WY") {
+    var slot2 = 49;
+  } else if (state == "SD") {
+    var slot2 = 50;
+  } else if (state == "UT") {
+    var slot2 = 51;
+  } else {
+    var slot2 = 20;
+  }
+
+  var chart2 = function() {
+    Highcharts.setOptions({
+      colors: ["#3a75c4", "#7fba00"]
+    })
+    Highcharts.chart("chart2", {
+      chart: {
+        events: {
+          load: function() {
+            var stateBox = this.series[0].points[slot2];
+            this.tooltip.refresh(stateBox);
+          }
+        },
+        type: "column",
+        height: 450
+      },
+      title: {
+        text: "State Ranking by Centers Per Million People"
+      },
+      xAxis: {
+        labels: {
+          enabled: false
+        },
+        categories: [
+          "Delaware",
+          "Rhode Island",
+          "Connecticut",
+          "New Jersey",
+          "New Hampshire",
+          "Pennsylvania",
+          "Kentucky",
+          "Massachusetts",
+          "Vermont",
+          "New York",
+          "West Virginia",
+          "Indiana",
+          "Maryland",
+          "North Carolina",
+          "Colorado",
+          "Virginia",
+          "Idaho",
+          "Michigan",
+          "Nevada",
+          "South Carolina",
+          "Nation",
+          "Florida",
+          "Alabama",
+          "Maine",
+          "Iowa",
+          "District of Columbia",
+          "Missouri",
+          "Tennessee",
+          "Alaska",
+          "Mississippi",
+          "Washington",
+          "Louisiana",
+          "Georgia",
+          "Texas",
+          "Oregon",
+          "Minnesota",
+          "Ohio",
+          "Illinois",
+          "Arkansas",
+          "Arizona",
+          "Nebraska",
+          "Wisconsin",
+          "Hawaii",
+          "Kansas",
+          "North Dakota",
+          "California",
+          "Montana",
+          "New Mexico",
+          "Oklahoma",
+          "Wyoming",
+          "South Dakota",
+          "Utah"
+        ]
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: "ACR Accredited Lung Cancer Screening Centers per Million"
+        }
+      },
+      legend: {
+        reversed: true,
+        enabled: false
+      },
+      plotOptions: {
+        series: {
+          stacking: "normal"
+        }
+      },
+      tooltip: {
+        formatter: function(){
+          return '<b>' + this.x + '</b>: ' + this.y
+        }
+      },
+      series: [{
+        name: "States",
+        data: [21.1,
+          17.0,
+          9.5,
+          9.2,
+          9.0,
+          8.7,
+          8.4,
+          8.2,
+          8.0,
+          6.6,
+          6.5,
+          6.5,
+          6.5,
+          6.0,
+          5.9,
+          5.7,
+          5.4,
+          5.2,
+          5.2,
+          4.9,
+          4.8,
+          4.7,
+          4.5,
+          4.5,
+          4.5,
+          4.5,
+          4.3,
+          4.1,
+          4.1,
+          4.0,
+          3.9,
+          3.9,
+          3.8,
+          3.8,
+          3.7,
+          3.6,
+          3.6,
+          3.4,
+          3.4,
+          3.2,
+          3.2,
+          2.9,
+          2.8,
+          2.7,
+          2.6,
+          2.4,
+          1.9,
+          1.9,
+          1.8,
+          1.7,
+          1.2,
+          0.7
+        ]
+      }],
+      dataLabels: {
+        style: {
+          fontFamily: "'Lato', sans-serif"
+        }
+      }
+    });
+    // hide credits
+    // $(".highcharts-credits").html("");
+  };
+
+  $(document).ready(function() {
+    chart2();
+    $("#chart2 .highcharts-color-0").css("fill", "#3a75c4");
+    $("#chart2 .highcharts-legend-item rect").css("fill", "#3a75c4");
+
+    var state = Cookies.get('state');
+    //  console.log("state achieved for chart 2");
+    // bar on graph changes to green based on state selection
+    if (state == "DE") {
+      $("#chart2 .highcharts-series-group rect:nth-child(1)").css("fill", "#ed1b2d");
+    }
+    if (state == "RI") {
+      $("#chart2 .highcharts-series-group rect:nth-child(2)").css("fill", "#ed1b2d");
+    }
+    if (state == "CT") {
+      $("#chart2 .highcharts-series-group rect:nth-child(3)").css("fill", "#ed1b2d");
+    }
+    if (state == "NJ") {
+      $("#chart2 .highcharts-series-group rect:nth-child(4)").css("fill", "#ed1b2d");
+    }
+    if (state == "NH") {
+      $("#chart2 .highcharts-series-group rect:nth-child(5)").css("fill", "#ed1b2d");
+    }
+    if (state == "PA") {
+      $("#chart2 .highcharts-series-group rect:nth-child(6)").css("fill", "#ed1b2d");
+    }
+    if (state == "KY") {
+      $("#chart2 .highcharts-series-group rect:nth-child(7)").css("fill", "#ed1b2d");
+    }
+    if (state == "MA") {
+      $("#chart2 .highcharts-series-group rect:nth-child(8)").css("fill", "#ed1b2d");
+    }
+    if (state == "VT") {
+      $("#chart2 .highcharts-series-group rect:nth-child(9)").css("fill", "#ed1b2d");
+    }
+    if (state == "NY") {
+      $("#chart2 .highcharts-series-group rect:nth-child(10)").css("fill", "#ed1b2d");
+    }
+    if (state == "WV") {
+      $("#chart2 .highcharts-series-group rect:nth-child(11)").css("fill", "#ed1b2d");
+    }
+    if (state == "IN") {
+      $("#chart2 .highcharts-series-group rect:nth-child(12)").css("fill", "#ed1b2d");
+    }
+    if (state == "MD") {
+      $("#chart2 .highcharts-series-group rect:nth-child(13)").css("fill", "#ed1b2d");
+    }
+    if (state == "NC") {
+      $("#chart2 .highcharts-series-group rect:nth-child(14)").css("fill", "#ed1b2d");
+    }
+    if (state == "CO") {
+      $("#chart2 .highcharts-series-group rect:nth-child(15)").css("fill", "#ed1b2d");
+    }
+    if (state == "VA") {
+      $("#chart2 .highcharts-series-group rect:nth-child(16)").css("fill", "#ed1b2d");
+    }
+    if (state == "ID") {
+      $("#chart2 .highcharts-series-group rect:nth-child(17)").css("fill", "#ed1b2d");
+    }
+    if (state == "MI") {
+      $("#chart2 .highcharts-series-group rect:nth-child(18)").css("fill", "#ed1b2d");
+    }
+    if (state == "NV") {
+      $("#chart2 .highcharts-series-group rect:nth-child(19)").css("fill", "#ed1b2d");
+    }
+    if (state == "SC") {
+      $("#chart2 .highcharts-series-group rect:nth-child(20)").css("fill", "#ed1b2d");
+    }
+    if (state == "Nation") {
+      $("#chart2 .highcharts-series-group rect:nth-child(21)").css("fill", "#ed1b2d");
+    }
+    if (state == "FL") {
+      $("#chart2 .highcharts-series-group rect:nth-child(22)").css("fill", "#ed1b2d");
+    }
+    if (state == "AL") {
+      $("#chart2 .highcharts-series-group rect:nth-child(23)").css("fill", "#ed1b2d");
+    }
+    if (state == "ME") {
+      $("#chart2 .highcharts-series-group rect:nth-child(24)").css("fill", "#ed1b2d");
+    }
+    if (state == "IA") {
+      $("#chart2 .highcharts-series-group rect:nth-child(25)").css("fill", "#ed1b2d");
+    }
+    if (state == "DC") {
+      $("#chart2 .highcharts-series-group rect:nth-child(26)").css("fill", "#ed1b2d");
+    }
+    if (state == "MO") {
+      $("#chart2 .highcharts-series-group rect:nth-child(27)").css("fill", "#ed1b2d");
+    }
+    if (state == "TN") {
+      $("#chart2 .highcharts-series-group rect:nth-child(28)").css("fill", "#ed1b2d");
+    }
+    if (state == "AK") {
+      $("#chart2 .highcharts-series-group rect:nth-child(29)").css("fill", "#ed1b2d");
+    }
+    if (state == "MS") {
+      $("#chart2 .highcharts-series-group rect:nth-child(30)").css("fill", "#ed1b2d");
+    }
+    if (state == "WA") {
+      $("#chart2 .highcharts-series-group rect:nth-child(31)").css("fill", "#ed1b2d");
+    }
+    if (state == "LA") {
+      $("#chart2 .highcharts-series-group rect:nth-child(32)").css("fill", "#ed1b2d");
+    }
+    if (state == "GA") {
+      $("#chart2 .highcharts-series-group rect:nth-child(33)").css("fill", "#ed1b2d");
+    }
+    if (state == "TX") {
+      $("#chart2 .highcharts-series-group rect:nth-child(34)").css("fill", "#ed1b2d");
+    }
+    if (state == "OR") {
+      $("#chart2 .highcharts-series-group rect:nth-child(35)").css("fill", "#ed1b2d");
+    }
+    if (state == "MN") {
+      $("#chart2 .highcharts-series-group rect:nth-child(36)").css("fill", "#ed1b2d");
+    }
+    if (state == "OH") {
+      $("#chart2 .highcharts-series-group rect:nth-child(37)").css("fill", "#ed1b2d");
+    }
+    if (state == "IL") {
+      $("#chart2 .highcharts-series-group rect:nth-child(38)").css("fill", "#ed1b2d");
+    }
+    if (state == "AR") {
+      $("#chart2 .highcharts-series-group rect:nth-child(39)").css("fill", "#ed1b2d");
+    }
+    if (state == "AZ") {
+      $("#chart2 .highcharts-series-group rect:nth-child(40)").css("fill", "#ed1b2d");
+    }
+    if (state == "NE") {
+      $("#chart2 .highcharts-series-group rect:nth-child(41)").css("fill", "#ed1b2d");
+    }
+    if (state == "WI") {
+      $("#chart2 .highcharts-series-group rect:nth-child(42)").css("fill", "#ed1b2d");
+    }
+    if (state == "HI") {
+      $("#chart2 .highcharts-series-group rect:nth-child(43)").css("fill", "#ed1b2d");
+    }
+    if (state == "KS") {
+      $("#chart2 .highcharts-series-group rect:nth-child(44)").css("fill", "#ed1b2d");
+    }
+    if (state == "ND") {
+      $("#chart2 .highcharts-series-group rect:nth-child(45)").css("fill", "#ed1b2d");
+    }
+    if (state == "CA") {
+      $("#chart2 .highcharts-series-group rect:nth-child(46)").css("fill", "#ed1b2d");
+    }
+    if (state == "MT") {
+      $("#chart2 .highcharts-series-group rect:nth-child(47)").css("fill", "#ed1b2d");
+    }
+    if (state == "NM") {
+      $("#chart2 .highcharts-series-group rect:nth-child(48)").css("fill", "#ed1b2d");
+    }
+    if (state == "OK") {
+      $("#chart2 .highcharts-series-group rect:nth-child(49)").css("fill", "#ed1b2d");
+    }
+    if (state == "WY") {
+      $("#chart2 .highcharts-series-group rect:nth-child(50)").css("fill", "#ed1b2d");
+    }
+    if (state == "SD") {
+      $("#chart2 .highcharts-series-group rect:nth-child(51)").css("fill", "#ed1b2d");
+    }
+    if (state == "UT") {
+      $("#chart2 .highcharts-series-group rect:nth-child(52)").css("fill", "#ed1b2d");
+    }
+    // nation bar label
+    $("#chart2 .highcharts-series-group rect:nth-child(21)").css("fill", "#7fba00");
+
+  })
+  // var state = function(){
+  // }
+</script>

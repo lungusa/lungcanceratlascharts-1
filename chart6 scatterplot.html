@@ -1,0 +1,638 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<style media="screen">
+  /*style="height: 400px; margin: 0 auto"*/
+
+  #chartUno {
+    min-width: 310px;
+    width: 100%;
+    /*height must be a minimum of 860px*/
+    /*min-height: 860px;*/
+    /*height: 1000px;*/
+    margin: 0 auto;
+  }
+
+  .highcharts-background {
+    fill: transparent;
+  }
+
+
+  .highcharts-title {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  .highcharts-legend {
+    font-family: 'Lato', sans-serif !important;
+    /*no legend at request of research team*/
+    /*display: none;*/
+  }
+
+  .highcharts-axis-labels {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  .highcharts-xaxis-labels {
+    font-family: 'Lato', sans-serif !important;
+  }
+
+  @media (max-width: 700px) {
+    #chartUno {
+      /*height: 1000px;*/
+    }
+  }
+</style>
+
+
+<!-- 860px min height before font gets messed up -->
+<div id="chartUno"></div>
+
+<script type="text/javascript">
+  var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52];
+  var y = [
+    9.1, 11.7, 13.5, 13.5, 13.8, 14.0, 14.0, 14.1, 15.0, 15.1, 15.1, 15.2, 15.2, 15.5, 15.6, 15.8, 15.9, 16.0, 16.0, 16.2, 16.5, 16.8, 17.1, 17.1, 17.3, 17.4, 17.5, 17.5, 17.7, 17.7, 18.1, 18.1, 18.7, 18.9, 19.0, 19.1, 19.1, 19.5, 19.7, 20.1, 20.6,
+    20.7, 21.4, 21.6, 21.9, 21.9, 22.2, 22.3, 22.5, 24.9, 25.7, 25.9
+  ];
+
+  var chart1 = function() {
+    Highcharts.setOptions({
+      colors: ["#7fba00", "#434348", "#90ed7d", "#f7a35c", "#8085e9", "#f15c80", "#e4d354", "#2b908f", "#f45b5b", "#91e8e1"]
+    })
+
+
+    Highcharts.chart('chartUno', {
+      chart: {
+        height: 430
+      },
+      xAxis: {
+        title: {
+          enabled: true,
+          text: 'Age-Adjusted Lung Cancer Incidence Rate per 100,000'
+        },
+        min: 25,
+        max: 100
+      },
+      yAxis: {
+        title: {
+          text: 'Adult Smoking (%)'
+        },
+        min: 8
+      },
+      legend: {
+        enabled: false
+      },
+      tooltip: {
+        formatter: function(){
+          return '<b>'+ this.series.name +'</b><br/><b>Lung Cancer Incidence</b>: ' + this.x + '<br><b>Adult Smoking</b>: ' + this.y
+        }
+      },
+      title: {
+        text: 'Relationship between Adult Smoking and Lung Cancer Incidence Rate by State'
+      },
+      series: [{
+          type: 'line',
+          name: 'Regression Line',
+          data: [
+            [29, 9.583],
+            [96.8, 25.6516]
+          ],
+          marker: {
+            enabled: false
+          },
+          states: {
+            hover: {
+              lineWidth: 0
+            }
+          },
+          enableMouseTracking: false
+        },
+        {
+          type: 'scatter',
+          name: 'Utah',
+          data: [
+            [29.1, 9.1]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'New Mexico',
+          data: [
+            [42.7, 17.5]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Colorado',
+          data: [
+            [45.8, 15.6]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'California',
+          data: [
+            [46.8, 11.7]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Hawaii',
+          data: [
+            [47.5, 14.1]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Wyoming',
+          data: [
+            [47.8, 19.1]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Idaho',
+          data: [
+            [51.4, 13.8]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Arizona',
+          data: [
+            [52.1, 14]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Minnesota',
+          data: [
+            [56.4, 16.2]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Texas',
+          data: [
+            [57.2, 15.2]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Maryland',
+          data: [
+            [57.2, 15.1]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'North Dakota',
+          data: [
+            [57.4, 18.7]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'South Dakota',
+          data: [
+            [58.2, 20.1]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Montana',
+          data: [
+            [58.7, 18.9]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Nebraska',
+          data: [
+            [59.1, 17.1]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'New Jersey',
+          data: [
+            [59.4, 13.5]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'District of Columbia',
+          data: [
+            [59.6, 16]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Oregon',
+          data: [
+            [59.6, 17.1]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Washington',
+          data: [
+            [60.4, 15]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Wisconsin',
+          data: [
+            [61.5, 17.3]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'New York',
+          data: [
+            [62.2, 17.7]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Kansas',
+          data: [
+            [62.2, 17.7]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Virginia',
+          data: [
+            [62.4, 16.5]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Nation',
+          data: [
+            [63, 16.8]
+          ],
+          marker: {
+            radius: 7
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Nevada',
+          data: [
+            [63.1, 17.5]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Alaska',
+          data: [
+            [63.2, 19.1]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Florida',
+          data: [
+            [63.3, 15.8]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Connecticut',
+          data: [
+            [63.5, 13.5]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Iowa',
+          data: [
+            [65.1, 18.1]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Massachusetts',
+          data: [
+            [66.5, 14]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Vermont',
+          data: [
+            [66.7, 16]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Pennsylvania',
+          data: [
+            [66.7, 18.1]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Georgia',
+          data: [
+            [67.7, 17.7]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Michigan',
+          data: [
+            [68, 20.7]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'New Hampshire',
+          data: [
+            [68.1, 18.9]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Illinois',
+          data: [
+            [68.3, 15.1]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'South Carolina',
+          data: [
+            [69.1, 19.7]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Rhode Island',
+          data: [
+            [70, 15.5]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'North Carolina',
+          data: [
+            [70.9, 19]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Ohio',
+          data: [
+            [71.1, 21.6]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Oklahoma',
+          data: [
+            [71.6, 22.2]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Alabama',
+          data: [
+            [71.7, 21.6]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Delaware',
+          data: [
+            [71.8, 17.4]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Louisiana',
+          data: [
+            [71.8, 21.9]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Indiana',
+          data: [
+            [74.5, 20.6]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Maine',
+          data: [
+            [74.9, 19.5]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Missouri',
+          data: [
+            [76.2, 22.5]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Mississippi',
+          data: [
+            [76.8, 22.5]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Tennessee',
+          data: [
+            [77.2, 21.9]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Arkansas',
+          data: [
+            [77.5, 24.9]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'West Virginia',
+          data: [
+            [81.6, 25.7]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+        {
+          type: 'scatter',
+          name: 'Kentucky',
+          data: [
+            [96.8, 25.9]
+          ],
+          marker: {
+            radius: 3
+          }
+        },
+      ]
+    })
+  };
+
+$(document).ready(function(){
+  chart1();
+})
+
+</script>
