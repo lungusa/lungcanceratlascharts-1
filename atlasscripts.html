@@ -1,0 +1,52 @@
+<script type="text/javascript">
+  $(".internalPageTitle").html("State of Lung Cancer");
+
+  $("#changeState").on("click", function() {
+    console.log("hey");
+    $("#location").click();
+  });
+
+  $("#stateSelectList").on("change", function(){
+    var forceReload = function(){
+      var state = Cookies.get("state");
+      window.location = "http://www.lung.org/dev/our-initiatives/research/lung-cancer-atlas/states/" + state +  ".html";
+    }
+    setTimeout(forceReload, 500);
+  });
+
+  $("[name='searchZip']").on("submit", function(){
+    var forceReload = function(){
+      var state = Cookies.get("state");
+      window.location = "http://www.lung.org/dev/our-initiatives/research/lung-cancer-atlas/states/" + state +  ".html";
+    }
+    console.log("asdfasdf");
+    setTimeout(forceReload, 1000);
+  })
+
+  $(".backToTop").on("click", function() {
+    var pos = $(window).scrollTop();
+    $("html, body").animate({
+      scrollTop: pos - pos
+    }, 200);
+  });
+
+  $("#tocSelect").on("change", function() {
+    if ($(this).val() !== "") {
+      window.location = $(this).val();
+    }
+  });
+
+  // removes all legends except for 4 bar chart
+ // var removeLegends = function() {
+   // var chartLegends = $(".highcharts-legend");
+    //for (var i = 0; i < chartLegends.length; i++) {
+    //  if (i != 4) {
+      //  $(chartLegends[i]).remove();
+      //}
+   // }
+  //}
+
+ // $(document).ready(function() {
+ //   setTimeout(removeLegends, 750);
+ // })
+</script>
