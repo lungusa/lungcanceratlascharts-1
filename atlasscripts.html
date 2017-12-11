@@ -41,6 +41,8 @@
     $(".internalPageTitle").after(x);
     $("#orangeRemove").click(function(){
       $(".CHANGE").toggleClass();
+      $("#orangeRemove").html("orange highlights gone. refresh to reset");
+      $("#orangeRemove").attr("disabled", "true");
     })
   })
 
