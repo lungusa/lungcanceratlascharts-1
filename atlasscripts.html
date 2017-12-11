@@ -37,6 +37,7 @@
   });
 
   $(document).ready(function(){
+    $(".internalPage a").attr("target", "_blank");
     var x = "<button id='orangeRemove'>Remove Orange color</button>";
     $(".internalPageTitle").after(x);
     $("#orangeRemove").click(function(){
