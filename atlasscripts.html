@@ -2,7 +2,6 @@
   $(".internalPageTitle").html("State of Lung Cancer");
 
   $("#changeState").on("click", function() {
-    console.log("hey");
     $("#location").click();
   });
 
@@ -45,6 +44,13 @@
       $("#orangeRemove").html("orange highlights gone. refresh to reset");
       $("#orangeRemove").attr("disabled", "true");
     })
+
+    var allStrongs = document.getElementsByTagName("strong");
+    for (var i = 0; i < allStrongs.length; i++) {
+      if(allStrongs[i].innerHTML.indexOf("5 year") != -1){
+        allStrongs[i].innerHTML = "5 Year Survival Rate";
+      }
+    }
   })
 
 
