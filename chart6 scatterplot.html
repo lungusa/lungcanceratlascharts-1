@@ -179,8 +179,9 @@
           load: function() {
             console.log("test log");
             console.log(this.series);
-            var stateBox = this.series[0].points[slot2];
-            this.tooltip.refresh(stateBox);
+            console.log(this.series[slot2]);
+            var stateBox = this.series[slot2];
+            // this.tooltip.refresh(stateBox);
           }
         },
         height: 430
