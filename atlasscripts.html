@@ -40,7 +40,7 @@
     // $(".CHANGE").toggleClass();
     $(".internalPage a").attr("target", "_blank");
     var x = "<button id='orangeRemove'>Remove Orange color</button>";
-    $(".internalPageTitle").after(x);
+    $("#internal_local").before(x);
     $("#orangeRemove").click(function(){
       $(".CHANGE").toggleClass();
       $("#orangeRemove").html("orange highlights gone. refresh to reset");
@@ -48,8 +48,6 @@
     })
 
     //global copy changes
-    $("#intro p").remove();
-
     var allStrongs = document.getElementsByTagName("strong");
     for (var i = 0; i < allStrongs.length; i++) {
       if(allStrongs[i].innerHTML.indexOf("5 year") != -1){
