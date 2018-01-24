@@ -36,6 +36,8 @@
   });
 
   $(document).ready(function(){
+    // when the project is ready to be pushed live, uncomment out the toggle class and delete or comment out all the orange button code below
+    // $(".CHANGE").toggleClass();
     $(".internalPage a").attr("target", "_blank");
     var x = "<button id='orangeRemove'>Remove Orange color</button>";
     $(".internalPageTitle").after(x);
@@ -45,10 +47,11 @@
       $("#orangeRemove").attr("disabled", "true");
     })
 
+    //global copy change
     var allStrongs = document.getElementsByTagName("strong");
     for (var i = 0; i < allStrongs.length; i++) {
       if(allStrongs[i].innerHTML.indexOf("5 year") != -1){
-        allStrongs[i].innerHTML = "5 Year Survival Rate";
+        allStrongs[i].innerHTML = "5-Year Survival Rate";
       }
     }
   })
