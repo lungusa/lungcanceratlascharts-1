@@ -47,7 +47,9 @@
       $("#orangeRemove").attr("disabled", "true");
     })
 
-    //global copy change
+    //global copy changes
+    $("#intro p").remove();
+
     var allStrongs = document.getElementsByTagName("strong");
     for (var i = 0; i < allStrongs.length; i++) {
       if(allStrongs[i].innerHTML.indexOf("5 year") != -1){
