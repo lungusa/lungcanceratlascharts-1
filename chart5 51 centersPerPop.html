@@ -251,7 +251,7 @@
       },
       tooltip: {
         formatter: function(){
-          return '<b>' + this.x + '</b>: ' + this.y
+          return '<b>' + this.x + '</b>: ' + Highcharts.numberFormat(this.y, 1)
         }
       },
       series: [{
