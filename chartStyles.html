@@ -1,9 +1,34 @@
 <style media="screen">
   /*LOCATED AT*/
+
   /*http://www.lung.org/css/lung-cancer-atlas-styles.html*/
 
+  #changeState {
+    margin-top: -8px;
+    float: right;
+  }
+
+
+  #changeState a {
+    background: #fff;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #2dc6d6;
+    padding: 12px;
+  }
+  #changeState a:hover{
+    background: #555559;
+    color: #fff;
+    text-decoration: none;
+  }
 
   /*INTRO*/
+
+  #intro {
+    margin-top: 20px;
+  }
+
   div#intro p {
     display: none;
     /*we have decided to remove intro copy from each state page and instead have it once on a central page*/
@@ -12,6 +37,10 @@
   }
 
   /*TABLE OF CONTENTS*/
+  #firstAnchor{
+    margin-left: 15px;
+  }
+
 
   #tocSelect {
     /*-webkit-appearance: none;*/
@@ -42,7 +71,7 @@
   }
 
   .chart {
-    border: 1px solid gray;
+    /*border: 1px solid gray;*/
     padding: 8px;
     /*height: 200px;
   background-color: #00a5db;*/
@@ -65,19 +94,44 @@
     color: #bad80a;
   }
 
+  @media (max-width: 1000px) {
+    /*#changeState{ font-size: 12px; }*/
+    #changeState a {
+      padding: 6px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    /*#changeState{ margin-top: 0px; }*/
+    #firstAnchor{
+      margin-left: 0px;
+    }
+    #linkss p{
+      margin-left: 0px !important;
+    }
+  }
+
+
   @media (max-width: 500px) {
     div#intro p {
       font-size: 16px;
       line-height: 25px;
     }
     #changeState {
-      font-size: 14px;
-      height: 41px;
-      width: 130px;
+      margin-top: -3px;
+      /*font-size: 14px;*/
+      /*height: 41px;*/
+      /*width: 130px;*/
     }
     .box li {
       font-size: 13px;
       line-height: 17px;
+    }
+  }
+  @media (max-width: 390px){
+    #changeState{
+      float: none;
+      margin-top: 12px;
     }
   }
 </style>
