@@ -1,28 +1,22 @@
 <script type="text/javascript">
-  $("#viewDiff").click(function(){
-    $('#location').click();
-  });
+
 
   // $(".internalPageTitle").html("State of Lung Cancer");
 
-  $("#changeState").on("click", function() {
-    $("#location").click();
-  });
-
-  $("#stateSelectList").on("change", function(){
-    var forceReload = function(){
+  $("#stateSelectList").on("change", function() {
+    var forceReload = function() {
       var state = Cookies.get("state");
-      window.location = "http://www.lung.org/dev/our-initiatives/research/lung-cancer-atlas/states/" + state +  ".html";
+      window.location = "http://www.lung.org/dev/our-initiatives/research/lung-cancer-atlas/states/" + state + ".html";
     }
     setTimeout(forceReload, 500);
   });
 
-  $("[name='searchZip']").on("submit", function(){
-    var forceReload = function(){
+  $("[name='searchZip']").on("submit", function() {
+    var forceReload = function() {
       var state = Cookies.get("state");
-      window.location = "http://www.lung.org/dev/our-initiatives/research/lung-cancer-atlas/states/" + state +  ".html";
+      window.location = "http://www.lung.org/dev/our-initiatives/research/lung-cancer-atlas/states/" + state + ".html";
     }
-    console.log("asdfasdf");
+    // console.log("asdfasdf");
     setTimeout(forceReload, 1000);
   })
 
@@ -41,7 +35,7 @@
 
 
 
-  $(document).ready(function(){
+  $(document).ready(function() {
     $(".internalPage a").attr("target", "_blank");
     $("#anchorLinks a").attr("target", "_self");
     $(".internalPageTitle").css("margin-bottom", "2px");
@@ -50,7 +44,7 @@
     $(".asdf").css("background-color", "#2dc6d6");
     // $(".asdf2").css("display", "inline-block");
 
-    var changeState = '<div id="changeState"><a id="viewDiff">View a different state</a></div>';
+    var changeState = '<div id="changeState"><a id="viewDiff" onclick="document.getElementById(\'location\').click()">View a different state</a></div>';
     $(".internalPageTitle").append(changeState);
 
     // when the project is ready to be pushed live, uncomment out the toggle class and delete or comment out all the orange button code below
@@ -66,24 +60,25 @@
     //global copy changes
     var allStrongs = document.getElementsByTagName("strong");
     for (var i = 0; i < allStrongs.length; i++) {
-      if(allStrongs[i].innerHTML.indexOf("5 year") != -1){
+      console.log(allStrongs[i]);
+      if (allStrongs[i].innerHTML.indexOf("5 year") != -1) {
         allStrongs[i].innerHTML = "5-Year Survival Rate";
       }
     }
+
   })
 
-
   // removes all legends except for 4 bar chart
- // var removeLegends = function() {
-   // var chartLegends = $(".highcharts-legend");
-    //for (var i = 0; i < chartLegends.length; i++) {
-    //  if (i != 4) {
-      //  $(chartLegends[i]).remove();
-      //}
-   // }
+  // var removeLegends = function() {
+  // var chartLegends = $(".highcharts-legend");
+  //for (var i = 0; i < chartLegends.length; i++) {
+  //  if (i != 4) {
+  //  $(chartLegends[i]).remove();
+  //}
+  // }
   //}
 
- // $(document).ready(function() {
- //   setTimeout(removeLegends, 750);
- // })
+  // $(document).ready(function() {
+  //   setTimeout(removeLegends, 750);
+  // })
 </script>
