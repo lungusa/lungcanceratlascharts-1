@@ -88,6 +88,7 @@
 
 
 <script type="text/javascript">
+  var note = "";
   var state = Cookies.get('state');
   // console.log('!!!!!!!!state is: ' + Cookies.get('state'));
   if (state == "AL") {
@@ -101,6 +102,7 @@
     $("#n").html("55.2");
     $("#q").html("55.3");
     $("#r").html("4.4");
+    var note = "<br>(only 5-Year Survival Data Available for Alaska)";
     // $("#stateChart").html("Alaska");
     //NATIONAL RATE NEEDED HERE
     // $(".highcharts-legend .highcharts-legend-item:nth-child(2) text").html("Nation?");
@@ -199,6 +201,7 @@
     $("#n").html("49.8");
     $("#q").html("55.3");
     $("#r").html("4.5");
+    var note = "<br><span style='font-size:12px;'>(National data used as Kansas does not have [stage at diagnosis and survival by stage/survival by stage/survival at the local stage] data available.)</span>";
     // $("#stateChart").html("Kansas");
     //NATIONAL RATE NEEDED HERE
   } else if (state == "KY") {
@@ -242,6 +245,7 @@
     $("#n").html("49.8");
     $("#q").html("55.3");
     $("#r").html("4.5");
+    var note = "<br><span style='font-size:12px;'>(National data used as Minnesota does not have [stage at diagnosis and survival by stage/survival by stage/survival at the local stage] data available.)</span>";
     // $("#stateChart").html("Minnesota");
     //NATIONAL RATE NEEDED HERE
   } else if (state == "MS") {
@@ -375,6 +379,7 @@
     $("#n").html("49.8");
     $("#q").html("55.3");
     $("#r").html("4.5");
+    var note = "<br><span style='font-size:12px;'>(National data used as Vermont does not have [stage at diagnosis and survival by stage/survival by stage/survival at the local stage] data available.)</span>";
     //NATIONAL VALUES NEEDED HERE
     // $("#stateChart").html("Vermont");
   } else if (state == "VA") {
@@ -425,7 +430,7 @@
       height: 400
     },
     title: {
-      text: 'Stage at Diagnosis and 5-Year Survival Rate'
+      text: 'Stage at Diagnosis and 5-Year Survival Rate' + note
     },
     credits: {
       enabled: false
@@ -442,6 +447,15 @@
   });
 
   // modifications
+
+  var titleTSpans = $(".highcharts-title tspan");
+  if (titleTSpans.length > 1) {
+    for (var i = 1; i < titleTSpans.length; i++) {
+      if (titleTSpans[i].innerHTML.toLowerCase() != "survival rate" || titleTSpans[i].innerHTML.toLowerCase() != "rate") {
+        $(titleTSpans[i]).attr("style", "font-size: 12px !important");
+      }
+    }
+  }
   $("#chart5 .highcharts-menu hr").css("margin", "0");
   $("#chart5 .highcharts-legend-item rect:eq(0)").css("fill", "#7fba00");
   $("#chart5 .highcharts-legend-item rect:eq(1)").css("fill", "#3a75c4");
@@ -459,4 +473,14 @@
   $(".highcharts-button").on("click", function(){
     $(".highcharts-menu hr").css("margin", "0");
   })
+  // $(window).on("resize", function(){
+  //   var titleTSpans = $(".highcharts-title tspan");
+  //   if (titleTSpans.length > 1) {
+  //     for (var i = 1; i < titleTSpans.length; i++) {
+  //       if (titleTSpans[i].innerHTML.toLowerCase() != "survival rate" || titleTSpans[i].innerHTML.toLowerCase() != "rate") {
+  //         $(titleTSpans[i]).attr("style", "font-size: 12px !important");
+  //       }
+  //     }
+  //   }
+  // })
 </script>
