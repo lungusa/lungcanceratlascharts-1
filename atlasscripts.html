@@ -39,14 +39,9 @@
     $(".internalPage a").attr("target", "_blank");
     $("#anchorLinks a").attr("target", "_self");
     $(".internalPageTitle").css("margin-bottom", "2px");
-    $(".internalPageTitle").wrap("<div class='asdf'></div>");
-    // $(".internalPageTitle").wrap("<div class='asdf2'></div>");
-    $(".asdf").css("background-color", "#2dc6d6");
-    // $(".asdf2").css("display", "inline-block");
-
+    $(".internalPageTitle").wrap("<div class='h1wrap' style='background-color:#2dc6d6;'></div>");
     var changeState = '<div id="changeState"><a id="viewDiff" onclick="document.getElementById(\'location\').click()">View a different state</a></div>';
     $(".internalPageTitle").append(changeState);
-
     var ctaSOLC = '<div class="ctaSOLC row"><div class="col hundredHeight valign-wrapper s9"><p class=killMargin><strong>Stand with Us to Fight Lung Cancer</strong><br>Let\'s work together to tell state Governors all across America to address fight against lung cancer to save lives.</div><div class="col hundredHeight valign-wrapper right-align s3"><p class=killMargin><a class="button red"href=http://www.lung.org/dev/our-initiatives/research/monitoring-trends-in-lung-disease/state-of-lung-cancer/sign-our-petition.html>Sign Our Petition</a></div></div>';
     $("h4").after(ctaSOLC);
 
@@ -60,28 +55,6 @@
     //   $("#orangeRemove").attr("disabled", "true");
     // })
 
-    //global copy changes
-    // var allStrongs = document.getElementsByTagName("strong");
-    // for (var i = 0; i < allStrongs.length; i++) {
-    //   console.log(allStrongs[i]);
-    //   if (allStrongs[i].innerHTML.indexOf("5 year") != -1) {
-    //     allStrongs[i].innerHTML = "5-Year Survival Rate";
-    //   }
-    // }
 
   })
-
-  // removes all legends except for 4 bar chart
-  // var removeLegends = function() {
-  // var chartLegends = $(".highcharts-legend");
-  //for (var i = 0; i < chartLegends.length; i++) {
-  //  if (i != 4) {
-  //  $(chartLegends[i]).remove();
-  //}
-  // }
-  //}
-
-  // $(document).ready(function() {
-  //   setTimeout(removeLegends, 750);
-  // })
 </script>
