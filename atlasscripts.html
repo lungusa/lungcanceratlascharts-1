@@ -47,6 +47,9 @@
     var changeState = '<div id="changeState"><a id="viewDiff" onclick="document.getElementById(\'location\').click()">View a different state</a></div>';
     $(".internalPageTitle").append(changeState);
 
+    var ctaSOLC = '<div class="ctaSOLC row"><div class="col hundredHeight valign-wrapper s9"><p class=killMargin><strong>Stand with Us to Fight Lung Cancer</strong><br>Let\'s work together to tell state Governors all across America to address fight against lung cancer to save lives.</div><div class="col hundredHeight valign-wrapper right-align s3"><p class=killMargin><a class="button red"href=http://www.lung.org/dev/our-initiatives/research/monitoring-trends-in-lung-disease/state-of-lung-cancer/sign-our-petition.html>Sign Our Petition</a></div></div>';
+    $("h4").after(ctaSOLC);
+
     // when the project is ready to be pushed live, uncomment out the toggle class and delete or comment out all the orange button code below
     $(".CHANGE").toggleClass();
     // var x = "<button id='orangeRemove'>Remove Orange color</button>";
@@ -58,13 +61,13 @@
     // })
 
     //global copy changes
-    var allStrongs = document.getElementsByTagName("strong");
-    for (var i = 0; i < allStrongs.length; i++) {
-      console.log(allStrongs[i]);
-      if (allStrongs[i].innerHTML.indexOf("5 year") != -1) {
-        allStrongs[i].innerHTML = "5-Year Survival Rate";
-      }
-    }
+    // var allStrongs = document.getElementsByTagName("strong");
+    // for (var i = 0; i < allStrongs.length; i++) {
+    //   console.log(allStrongs[i]);
+    //   if (allStrongs[i].innerHTML.indexOf("5 year") != -1) {
+    //     allStrongs[i].innerHTML = "5-Year Survival Rate";
+    //   }
+    // }
 
   })
 
