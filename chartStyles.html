@@ -2,7 +2,11 @@
   /*LOCATED AT*/
 
   /*http://www.lung.org/css/lung-cancer-atlas-styles.html*/
-  #subnav{ background: none;}
+
+  #subnav {
+    background: none;
+  }
+
   #changeState {
     margin-top: -8px;
     float: right;
@@ -17,7 +21,8 @@
     color: #2dc6d6;
     padding: 12px;
   }
-  #changeState a:hover{
+
+  #changeState a:hover {
     background: #555559;
     color: #fff;
     text-decoration: none;
@@ -37,10 +42,27 @@
   }
 
   /*TABLE OF CONTENTS*/
-  #anchorLinks {background-color: #e8e9ea; margin-bottom: 30px; padding: 6px 0 8px;}
-  #anchorLinks p {font-size: 16px; font-weight: 400; line-height: 24px; margin-bottom: 0;}
-  #anchorLinks p a {font-weight: 700;}
-  #firstAnchor{margin-left: 5px;}
+
+  #anchorLinks {
+    background-color: #e8e9ea;
+    margin-bottom: 30px;
+    padding: 6px 0 8px;
+  }
+
+  #anchorLinks p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 0;
+  }
+
+  #anchorLinks p a {
+    font-weight: 700;
+  }
+
+  #firstAnchor {
+    margin-left: 5px;
+  }
 
 
   #tocSelect {
@@ -53,11 +75,30 @@
   }
 
   /*CALL TO ACTION HELPERS*/
-   .ctaSOLC { background: #e8e9ea; overflow: hidden; }
-   /* valign-wrapper class is from materialize.css. vertical alignment helper*/
-   .valign-wrapper{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}
-   .killMargin{ margin: 0px !important ;}
-   .hundredHeight { height: 100px; }
+
+  .ctaSOLC {
+    background: #e8e9ea;
+    margin-bottom: 20px;
+  }
+
+  /* valign-wrapper class is from materialize.css. vertical alignment helper*/
+
+  .killMargin {
+    margin: 0px !important;
+  }
+
+  .ctaP {
+    padding: 10px;
+  }
+
+  .solcCtaBtn {
+    margin: -6px 5px 10px 5px !important;
+  }
+
+  #ctaBR {
+    display: none !important;
+  }
+
 
 
 
@@ -113,17 +154,27 @@
 
   @media (max-width: 500px) {
     /*#changeState{ margin-top: 0px; }*/
-    #firstAnchor{
+    #firstAnchor {
       margin-left: 0px;
     }
-    #anchorLinks p{
+    #anchorLinks p {
       margin-left: 0px !important;
     }
+    .solcCtaBtn {
+      float: none !important;
+      margin: 10px 0 0 !important;
+    }
+    #ctaBR {
+      display: block !important;
+    }
+
   }
 
 
   @media (max-width: 500px) {
-    #anchorLinks p{ font-size: 16px;}
+    #anchorLinks p {
+      font-size: 16px;
+    }
     div#intro p {
       font-size: 16px;
       line-height: 25px;
@@ -139,8 +190,9 @@
       line-height: 17px;
     }
   }
-  @media (max-width: 390px){
-    #changeState{
+
+  @media (max-width: 390px) {
+    #changeState {
       float: none;
       margin-top: 12px;
     }

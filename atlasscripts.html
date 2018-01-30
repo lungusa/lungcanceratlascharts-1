@@ -42,8 +42,9 @@
     $(".internalPageTitle").wrap("<div class='h1wrap' style='background-color:#2dc6d6;'></div>");
     var changeState = '<div id="changeState"><a id="viewDiff" onclick="document.getElementById(\'location\').click()">View a different state</a></div>';
     $(".internalPageTitle").append(changeState);
-    // var ctaSOLC = '<div class="ctaSOLC row"><div class="col hundredHeight valign-wrapper s9"><p class=killMargin><strong>Stand with Us to Fight Lung Cancer</strong><br>Let\'s work together to tell state Governors all across America to address fight against lung cancer to save lives.</div><div class="col hundredHeight valign-wrapper right-align s3"><p class=killMargin><a class="button red"href=http://www.lung.org/dev/our-initiatives/research/monitoring-trends-in-lung-disease/state-of-lung-cancer/sign-our-petition.html>Sign Our Petition</a></div></div>';
-    // $("h4").after(ctaSOLC);
+
+    var ctaSOLC = '<div class=ctaSOLC><p class="ctaP killMargin"><strong>Stand with Us to Fight Lung Cancer</strong><br><a class="button red solcCtaBtn"href=http://www.lung.org/dev/our-initiatives/research/monitoring-trends-in-lung-disease/state-of-lung-cancer/sign-our-petition.html style=float:right>Sign Our Petition</a><br id=ctaBR>Let\'s work together to tell state Governors all across America to address fight against lung cancer to save lives.</div>';
+    $("h2").before(ctaSOLC);
 
     // when the project is ready to be pushed live, uncomment out the toggle class and delete or comment out all the orange button code below
     $(".CHANGE").toggleClass();
