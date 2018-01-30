@@ -1,0 +1,141 @@
+<p>
+  Let’s work together to tell state Governors all across America to fight against lung cancer to save lives. Sign our petition today!
+</p>
+
+<p>
+  No one deserves lung cancer.  Far too many people are given this dreaded diagnosis but in 2018 there is new hope to save more lives.  Early diagnosis is the key to survival.
+</p>
+
+<p>
+  Our state must prioritize lung cancer and implement proven policies to reduce the deadly toll of lung cancer:
+</p>
+<ul>
+  <li>Improve access to and availability of screening for those at high-risk</li>
+  <li>Increase access to quality, affordable healthcare</li>
+  <li>Promote radon testing and mitigation in homes, schools and workplaces</li>
+  <li>Support smokefree air</li>
+  <li>Reduce tobacco use through proven prevention and quit smoking programs</li>
+  <li>Collect key data to increase knowledge about lung cancer</li>
+
+</ul>
+
+<p>
+  The American Lung Association’s LUNG FORCE “State of Lung Cancer” report shows that more can be done in our state to combat the #1 cancer killer of both women and men in the United States.
+</p>
+
+<p>
+  Join the American Lung Association today and help us make it clear to your Governor that saving lives from lung cancer must be a public health priority.
+</p>
+
+<p>
+  <strong>By signing this petition, I call on my state Governor to make combating lung cancer a public health priority. </strong>
+</p>
+
+
+
+
+<!-- form -->
+<div style="padding: 10px;" id="survey" class="responsive-form">
+  <form action="http://ala.convio.net/site/Survey" method="post" name="responsiveSurvey" id="responsiveSurvey" class="webform-client-form hideSubmitButton-processed" novalidate="novalidate" onsubmit="if (this.verifycheckbox.checked == false) { alert ('You must verify that the information provided is correct and that no attempt to spam is being made.'); return false; } else { return true; }">
+
+    <!-- hiddeninput -->
+    <input type="hidden" name="cons_info_component" id="cons_info_component" value="t">
+
+    <div class="form-item" id="webform-component-firstname">
+      <label for="cons_first_name">First Name:</label>
+      <input type="text" name="cons_first_name" id="cons_first_name" value="" size="32" maxlength="50" placeholder="required" class="form-text required">
+    </div>
+    <br><br>
+
+    <div class="form-item" id="webform-component-lastname">
+      <label for="cons_last_name">Last Name:</label>
+      <input type="text" name="cons_last_name" id="cons_last_name" value="" size="32" maxlength="50" placeholder="required" class="form-text required">
+    </div>
+    <br><br>
+
+    <div class="form-item" id="webform-component-email">
+      <label for="cons_email">Email:</label>
+      <input type="text" name="cons_email" id="cons_email" value="" size="32" maxlength="255" placeholder="required" class="form-text required">
+    </div>
+    <br><br>
+
+    <div class="form-item" id="webform-component-zip">
+      <label for="cons_zip_code">ZIP / Postal Code:</label>
+      <input class="form-text required" type="text" name="cons_zip_code" id="cons_zip_code" value="" size="15" maxlength="40" placeholder="required">
+      <!-- <p class="AutoOptInWarningMessage">If you respond and have not already registered, you will receive periodic updates and communications from American Lung Association.</p> -->
+    </div>
+    <br><br>
+
+
+    <div class="form-item" id="webform-component-verify-captcha">
+      <div id="edit-submitted-verify-captcha" class="form-checkboxes">
+        <div class="form-item form-type-checkbox form-item-submitted-verify-captcha-yes">
+          <div id="captcha" class="displayinline"><input type="checkbox" name="verifycheckbox" value="1" id="captchaText"></div><label for="" "captcha"="" class="wrapable"><span class="Explicit">I verify that this information is correct and that no attempt to spam is being made.</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:none">
+      <input type="hidden" name="cons_mail_opt_in" id="cons_mail_opt_in" value="t">
+
+      <input type="checkbox" name="cons_postal_opt_in" id="cons_postal_opt_in" checked="checked">
+      <input type="hidden" id="cons_postal_opt_in_requested" name="cons_postal_opt_in_requested" value="true">
+
+      <label for="denySubmit">Spam Control Text:</label>&nbsp;
+      <input type="text" name="denySubmit" id="denySubmit" value="">
+    </div>
+
+    <div class="form-item" id="webform-component-button">
+      <input type="submit" name="ACTION_SUBMIT_SURVEY_RESPONSE" id="ACTION_SUBMIT_SURVEY_RESPONSE" value="Submit" class="form-button button blue">&nbsp;&nbsp;
+    </div>
+
+    <input type="hidden" name="SURVEY_ID" id="SURVEY_ID" value="69783">
+  </form>
+</div>
+
+<script src="https://secure3.convio.net/ala/lungforce/drupal/js/jquery.validate.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#responsiveSurvey').validate({ // initialize the plugin
+      rules: {
+        cons_first_name: {
+          required: true
+        },
+        cons_last_name: {
+          required: true
+        },
+        cons_email: {
+          required: true,
+          email: true
+        },
+        cons_zip_code: {
+          required: true,
+          number: true,
+          minlength: 5,
+          maxlength: 5
+        }
+      },
+
+      messages: {
+        cons_first_name: {
+          required: 'First Name is required'
+        },
+        cons_last_name: {
+          required: 'Last Name is required'
+        },
+        cons_email: {
+          required: 'Email is required',
+          email: 'Email is not valid'
+        },
+        cons_zip_code: {
+          required: 'Zip Code is required',
+          number: 'Zip Code must contain numbers only',
+          minlength: 'Zip Code must be 5 numbers',
+          maxlength: 'Zip Code cannot be more than 5 numbers'
+        }
+      }
+    });
+  }); //]]>
+</script>
+
+<!-- end form -->
