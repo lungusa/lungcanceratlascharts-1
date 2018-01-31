@@ -3,7 +3,7 @@
 </p>
 
 <p>
-  No one deserves lung cancer.  Far too many people are given this dreaded diagnosis but in 2018 there is new hope to save more lives.  Early diagnosis is the key to survival.
+  No one deserves lung cancer. Far too many people are given this dreaded diagnosis but in 2018 there is new hope to save more lives. Early diagnosis is the key to survival.
 </p>
 
 <p>
@@ -45,32 +45,33 @@
       <label for="cons_first_name">First Name:</label>
       <input type="text" name="cons_first_name" id="cons_first_name" value="" size="32" maxlength="50" placeholder="required" class="form-text required">
     </div>
-    <br><br>
 
     <div class="form-item" id="webform-component-lastname">
       <label for="cons_last_name">Last Name:</label>
       <input type="text" name="cons_last_name" id="cons_last_name" value="" size="32" maxlength="50" placeholder="required" class="form-text required">
     </div>
-    <br><br>
 
     <div class="form-item" id="webform-component-email">
       <label for="cons_email">Email:</label>
       <input type="text" name="cons_email" id="cons_email" value="" size="32" maxlength="255" placeholder="required" class="form-text required">
     </div>
-    <br><br>
 
     <div class="form-item" id="webform-component-zip">
       <label for="cons_zip_code">ZIP / Postal Code:</label>
       <input class="form-text required" type="text" name="cons_zip_code" id="cons_zip_code" value="" size="15" maxlength="40" placeholder="required">
       <!-- <p class="AutoOptInWarningMessage">If you respond and have not already registered, you will receive periodic updates and communications from American Lung Association.</p> -->
     </div>
-    <br><br>
 
 
     <div class="form-item" id="webform-component-verify-captcha">
       <div id="edit-submitted-verify-captcha" class="form-checkboxes">
         <div class="form-item form-type-checkbox form-item-submitted-verify-captcha-yes">
-          <div id="captcha" class="displayinline"><input type="checkbox" name="verifycheckbox" value="1" id="captchaText"></div><label for="" "captcha"="" class="wrapable"><span class="Explicit">I verify that this information is correct and that no attempt to spam is being made.</span></label>
+          <div id="captcha" class="displayinline">
+            <!-- <input type="checkbox" name="verifycheckbox" value="1" id="captchaText"> -->
+          </div>
+          <label for="" "captcha"="" class="wrapable">
+            <span class="Explicit">I verify that this information is correct and that no attempt to spam is being made.</span>
+          </label>
         </div>
       </div>
     </div>
@@ -96,6 +97,15 @@
 <script src="https://secure3.convio.net/ala/lungforce/drupal/js/jquery.validate.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
+    var checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.name = "verifycheckbox";
+    checkbox.value = "1";
+    checkbox.id = "captchaText";
+    checkbox.class = "form-text required";
+    var div = document.getElementById("captcha");
+    div.appendChild(checkbox);
+    checkbox.checked = false;
     $('#responsiveSurvey').validate({ // initialize the plugin
       rules: {
         cons_first_name: {
