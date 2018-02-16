@@ -44,7 +44,11 @@
     $(".internalPageTitle").append(changeState);
 
     var ctaSOLC = '<div class=ctaSOLC><p class="ctaP killMargin"><strong>Stand with Us to Fight Lung Cancer</strong><br><a class="button red solcCtaBtn"href=http://www.lung.org/dev/our-initiatives/research/monitoring-trends-in-lung-disease/state-of-lung-cancer/sign-our-petition.html style=float:right>Sign Our Petition</a><br id=ctaBR>Let\'s work together to tell state governors all across America to fight against lung cancer to save lives.</div>';
-    $("h2").before(ctaSOLC);
+    var h2s = $("h2")
+    $(h2s[0]).before(ctaSOLC);
+    $(h2s[1]).before(ctaSOLC);
+    $("#item-856045072").before(ctaSOLC);
+
 
     // when the project is ready to be pushed live, uncomment out the toggle class and delete or comment out all the orange button code below
     $(".CHANGE").toggleClass();
