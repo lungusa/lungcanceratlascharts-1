@@ -122,11 +122,18 @@
   }
 
   .chart {
-    /*border: 1px solid gray;*/
+    /*border: 1px solid #a3a9ac;*/
     padding: 8px;
+    margin-bottom: 30px;
     /*height: 200px;
   background-color: #00a5db;*/
   }
+
+  .chart3:after {content: "Hover over the bars to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+  .chartFour:after {content: "Hover over the bars to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+  .chart6:after {content: "Hover over the bars to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+  .chart2:after {content: "Hover over the bars to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+  .chart1:after {content: "Hover over the points to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
 
   .chartExplain {
     /*text-align: center;*/
@@ -152,13 +159,27 @@
     }
   }
 
+  @media (max-width: 801px) {
+    .chart3:after {content: "Hover over or tap the bars to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+    .chartFour:after {content: "Hover over or tap the bars to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+    .chart6:after {content: "Hover over or tap the bars to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+    .chart2:after {content: "Hover over or tap the bars to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+    .chart1:after {content: "Hover over or tap the points to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+  }
+
+
   @media (max-width: 500px) {
+    .chart3:after {content: "Tap the bars to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+    .chartFour:after {content: "Tap the bars to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+    .chart6:after {content: "Tap the bars to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+    .chart2:after {content: "Tap the bars to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+    .chart1:after {content: "Tap the points to see data for different states."; font-size: 14px; font-style: italic; text-align: center; display: block;}
+
+
+
     /*#changeState{ margin-top: 0px; }*/
     #firstAnchor {
       margin-left: 0px;
-    }
-    #anchorLinks p {
-      margin-left: 0px !important;
     }
     .solcCtaBtn {
       float: none !important;
@@ -167,12 +188,8 @@
     #ctaBR {
       display: block !important;
     }
-
-  }
-
-
-  @media (max-width: 500px) {
     #anchorLinks p {
+      margin-left: 0px !important;
       font-size: 16px;
     }
     div#intro p {
