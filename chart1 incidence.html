@@ -89,9 +89,9 @@
     var slot3 = 33;
   } else if (state == "GA") {
     var slot3 = 32;
-  } else if (state == "PA") {
-    var slot3 = 31;
   } else if (state == "VT") {
+    var slot3 = 31;
+  } else if (state == "PA") {
     var slot3 = 30;
   } else if (state == "MA") {
     var slot3 = 29;
@@ -123,15 +123,15 @@
     var slot3 = 16;
   } else if (state == "NJ") {
     var slot3 = 15;
-  } else if (state == "NE") {
-    var slot3 = 14;
-  } else if (state == "MT") {
-    var slot3 = 13;
-  } else if (state == "SD") {
-    var slot3 = 12;
-  } else if (state == "ND") {
-    var slot3 = 11;
   } else if (state == "MD") {
+    var slot3 = 14;
+  } else if (state == "NE") {
+    var slot3 = 13;
+  } else if (state == "MT") {
+    var slot3 = 12;
+  } else if (state == "SD") {
+    var slot3 = 11;
+  } else if (state == "ND") {
     var slot3 = 10;
   } else if (state == "TX") {
     var slot3 = 9;
@@ -182,9 +182,58 @@
         labels: {
           enabled: false
         },
-        categories: ["Utah", "New Mexico", "Colorado", "California", "Hawaii", "Wyoming", "Idaho", "Arizona", "Minnesota", "Texas", "Maryland", "North Dakota", "South Dakota", "Montana", "Nebraska", "New Jersey", "District of Columbia",
-          "Oregon", "Washington", "Wisconsin", "New York", "Kansas", "Virginia", "Nation", "Nevada", "Alaska", "Florida", "Connecticut", "Iowa", "Massachusetts", "Vermont", "Pennsylvania", "Georgia", "Michigan", "New Hampshire", "Illinois",
-          "South Carolina", "Rhode Island", "North Carolina", "Ohio", "Oklahoma", "Alabama", "Delaware", "Louisiana", "Indiana", "Maine", "Missouri", "Mississippi", "Tennessee", "Arkansas", "West Virginia", "Kentucky"
+        categories: ["Utah",
+          "New Mexico",
+          "Colorado",
+          "California",
+          "Hawaii",
+          "Wyoming",
+          "Idaho",
+          "Arizona",
+          "Minnesota",
+          "Texas",
+          "North Dakota",
+          "South Dakota",
+          "Montana",
+          "Nebraska",
+          "Maryland",
+          "New Jersey",
+          "District of Columbia",
+          "Oregon",
+          "Washington",
+          "Wisconsin",
+          "New York",
+          "Kansas",
+          "Virginia",
+          "Nation",
+          "Nevada",
+          "Alaska",
+          "Florida",
+          "Connecticut",
+          "Iowa",
+          "Massachusetts",
+          "Pennsylvania",
+          "Vermont",
+          "Georgia",
+          "Michigan",
+          "New Hampshire",
+          "Illinois",
+          "South Carolina",
+          "Rhode Island",
+          "North Carolina",
+          "Ohio",
+          "Oklahoma",
+          "Alabama",
+          "Delaware",
+          "Louisiana",
+          "Indiana",
+          "Maine",
+          "Missouri",
+          "Mississippi",
+          "Tennessee",
+          "Arkansas",
+          "West Virginia",
+          "Kentucky"
         ]
       },
       yAxis: {
@@ -215,11 +264,11 @@
           52.1,
           55.5,
           56.4,
-          57.2,
           57.4,
           58.2,
           58.7,
           59.1,
+          59.2,
           59.4,
           59.6,
           59.6,
@@ -228,7 +277,7 @@
           62.2,
           62.2,
           62.4,
-          63,
+          63.0,
           63.1,
           63.2,
           63.3,
@@ -238,11 +287,11 @@
           66.7,
           66.7,
           67.7,
-          68,
+          68.0,
           68.1,
           68.3,
           69.1,
-          70,
+          70.0,
           70.9,
           71.1,
           71.6,
@@ -269,7 +318,7 @@
       },
 
       tooltip: {
-        formatter: function(){
+        formatter: function() {
           return '<b>' + this.x + '</b>: ' + Highcharts.numberFormat(this.y, 1);
         }
       }
@@ -347,10 +396,10 @@
     if (state == "GA") {
       $("#chart3 .highcharts-series-group rect:nth-child(33)").css("fill", "#ed1b2d");
     }
-    if (state == "PA") {
+    if (state == "VT") {
       $("#chart3 .highcharts-series-group rect:nth-child(32)").css("fill", "#ed1b2d");
     }
-    if (state == "VT") {
+    if (state == "PA") {
       $("#chart3 .highcharts-series-group rect:nth-child(31)").css("fill", "#ed1b2d");
     }
     if (state == "MA") {
@@ -398,19 +447,19 @@
     if (state == "NJ") {
       $("#chart3 .highcharts-series-group rect:nth-child(16)").css("fill", "#ed1b2d");
     }
-    if (state == "NE") {
+    if (state == "MD") {
       $("#chart3 .highcharts-series-group rect:nth-child(15)").css("fill", "#ed1b2d");
     }
-    if (state == "MT") {
+    if (state == "NE") {
       $("#chart3 .highcharts-series-group rect:nth-child(14)").css("fill", "#ed1b2d");
     }
-    if (state == "SD") {
+    if (state == "MT") {
       $("#chart3 .highcharts-series-group rect:nth-child(13)").css("fill", "#ed1b2d");
     }
-    if (state == "ND") {
+    if (state == "SD") {
       $("#chart3 .highcharts-series-group rect:nth-child(12)").css("fill", "#ed1b2d");
     }
-    if (state == "MD") {
+    if (state == "ND") {
       $("#chart3 .highcharts-series-group rect:nth-child(11)").css("fill", "#ed1b2d");
     }
     if (state == "TX") {
