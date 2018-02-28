@@ -1,12 +1,10 @@
 <script type="text/javascript">
-
-
   // $(".internalPageTitle").html("State of Lung Cancer");
 
   $("#stateSelectList").on("change", function() {
     var forceReload = function() {
       var state = Cookies.get("state");
-      window.location = "http://www.lung.org/dev/our-initiatives/research/monitoring-trends-in-lung-disease/state-of-lung-cancer/states/" + state + ".html";
+      window.location = "http://www.lung.org/our-initiatives/research/monitoring-trends-in-lung-disease/state-of-lung-cancer/states/" + state + ".html";
     }
     setTimeout(forceReload, 500);
   });
@@ -14,7 +12,7 @@
   $("[name='searchZip']").on("submit", function() {
     var forceReload = function() {
       var state = Cookies.get("state");
-      window.location = "http://www.lung.org/dev/our-initiatives/research/monitoring-trends-in-lung-disease/state-of-lung-cancer/states/" + state + ".html";
+      window.location = "http://www.lung.org/our-initiatives/research/monitoring-trends-in-lung-disease/state-of-lung-cancer/states/" + state + ".html";
     }
     // console.log("asdfasdf");
     setTimeout(forceReload, 1000);
@@ -49,7 +47,6 @@
     $(h2s[0]).before(ctaSOLC);
     $(h2s[1]).before(ctaSOLC);
     $("#item-856045072").before(ctaSOLC);
-
 
     // when the project is ready to be pushed live, uncomment out the toggle class and delete or comment out all the orange button code below
     $(".CHANGE").toggleClass();
