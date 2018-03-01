@@ -499,13 +499,13 @@
   // modifications
 
   var titleTSpans = $(".highcharts-title tspan");
-  if (titleTSpans.length > 1) {
-    for (var i = 1; i < titleTSpans.length; i++) {
-      if (titleTSpans[i].innerHTML.toLowerCase() != "survival rate" || titleTSpans[i].innerHTML.toLowerCase() != "rate") {
-        $(titleTSpans[i]).attr("style", "font-size: 12px !important");
-      }
-    }
-  }
+  // if (titleTSpans.length > 1) {
+  //   for (var i = 1; i < titleTSpans.length; i++) {
+  //     if (titleTSpans[i].innerHTML.toLowerCase() != "survival rate" || titleTSpans[i].innerHTML.toLowerCase() != "rate") {
+  //       $(titleTSpans[i]).attr("style", "font-size: 12px !important");
+  //     }
+  //   }
+  // }
   $("#chart5 .highcharts-menu hr").css("margin", "0");
   $("#chart5 .highcharts-legend-item rect:eq(0)").css("fill", "#7fba00");
   $("#chart5 .highcharts-legend-item rect:eq(1)").css("fill", "#3a75c4");
@@ -516,8 +516,6 @@
   // if (state) {
   //   $("#chart5 .highcharts-title > tspan").html("Percent of Cases by Stage at Diagnosis (" + state + ")");
   // }
-  $("#chart5 .highcharts-credits").html("");
-
 
 
   $(".highcharts-button").on("click", function() {
@@ -528,16 +526,21 @@
     if ($(".highcharts-xaxis-labels tspan").length == 2) {
       var firstXAxisLabel = $(".highcharts-xaxis-labels tspan")[0];
       var secondXAxisLabel = $(".highcharts-xaxis-labels tspan")[1];
-      $(firstXAxisLabel).html("Early Stage");
-      $(secondXAxisLabel).html("Late Stage");
+      firstXAxisLabel.innerHTML = "Early Stage";
+      secondXAxisLabel.innerHTML = "Late Stage";
+      // for IE and Safari (svg and tables do not support innerHTML)
+      firstXAxisLabel.textContent = "Early Stage";
+      secondXAxisLabel.textContent = "Late Stage";
     } else if ($(".highcharts-xaxis-labels tspan").length == 3) {
       var firstXAxisLabel = $(".highcharts-xaxis-labels tspan")[0];
       var secondXAxisLabel = $(".highcharts-xaxis-labels tspan")[1];
       var thirdXAxisLabel = $(".highcharts-xaxis-labels tspan")[2];
-      $(firstXAxisLabel).html("Early Stage");
-      $(secondXAxisLabel).remove();
-      $(thirdXAxisLabel).html("Late Stage");
-
+      firstXAxisLabel.innerHTML = "Early Stage";
+      secondXAxisLabel.parentNode.removeChild(secondXAxisLabel);
+      secondXAxisLabel.innerHTML = "Late Stage";
+      // for IE and Safari (svg and tables do not support innerHTML)
+      firstXAxisLabel.textContent = "Early Stage";
+      secondXAxisLabel.textContent = "Late Stage";
     }
   };
   replaceLabels();
